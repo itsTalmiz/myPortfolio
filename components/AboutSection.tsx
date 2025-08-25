@@ -26,8 +26,8 @@ const services = [
 ];
 
 const stats = [
-  { number: '20', symbol: '+', label: 'Completed Projects', icon: Settings },
-  { number: '9', symbol: '%', label: 'Client satisfaction', icon: Shield },
+  { number: '50', symbol: '+', label: 'Completed Projects', icon: Settings },
+  { number: '99', symbol: '%', label: 'Client satisfaction', icon: Shield },
   { number: '3', symbol: '+', label: 'Years of experience', icon: Wrench },
 ];
 
