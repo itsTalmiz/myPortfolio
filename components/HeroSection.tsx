@@ -7,22 +7,22 @@ import Image from "next/image"
 import Link from "next/link"
 
 const roles = [
-  'Hardware Engineer',
+  'Hardware Design Engineer',
   'Embedded Systems Developer',
   'PCB Designer',
-  'IoT Architect',
+  //'IoT Architect',
   'Firmware Developer',
 ];
 
 const technologies = [
-  { name: 'ARM Cortex', icon: Cpu },
-  { name: 'C/C++', icon: Zap },
+  { name: 'Embedded C', icon: Cpu },
+  { name: 'C++', icon: Zap },
   { name: 'PCB Design', icon: Cpu },
   { name: 'RTOS', icon: Zap },
   { name: 'IoT Protocols', icon: Wifi },
   { name: 'Embedded Linux', icon: Cpu },
-  { name: 'Power Systems', icon: Zap },
-  { name: 'Signal Processing', icon: Wifi }
+  { name: 'Firmware Development', icon: Zap },
+  { name: 'Verilog', icon: Wifi }
 ];
 
 // Hardware-themed floating particles

@@ -85,7 +85,7 @@ export const education = [
     degree: "Bachelor of Science in Electrical (Computer) Engineering",
     specialization: "Embedded Systems",
     duration: "09/2019 – 09/2023",
-    gpa: "3.2", // add if you have one
+    //gpa: "3.2", // add if you have one
   },
 ];
 
