@@ -13,7 +13,7 @@ const services = [
   },
   {
     icon: Zap,
-    title: 'Embedded Development',
+    title: 'Embedded Syetem Development',
     description: 'Firmware development and real-time system programming with optimized performance',
     color: 'from-orange-500 to-red-500',
   },
