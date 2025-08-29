@@ -44,7 +44,7 @@ export function Footer() {
           <div className="text-center md:text-right">
             <p className="text-gray-400 text-sm flex items-center justify-center md:justify-end space-x-1">
               <span>© {currentYear} Made with</span>
-              <span>by haseeb</span>
+              <span>by itsTalmiz</span>
             </p>
           </div>
         </div>
