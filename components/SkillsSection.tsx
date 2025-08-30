@@ -1,88 +1,70 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
 import { Card } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import Image from 'next/image';
 
 const skillCategories = {
-  hardware: [
-    { name: 'PCB Design (Altium Designer)', level: 95 },
-    { name: 'Circuit Analysis', level: 92 },
-    { name: 'Component Selection', level: 90 },
-    { name: 'Signal Integrity', level: 88 },
-    { name: 'Power Electronics', level: 85 },
-    { name: 'EMC/EMI Design', level: 82 },
-  ],
   embedded: [
-    { name: 'C/C++ Programming', level: 94 },
-    { name: 'ARM Cortex Microcontrollers', level: 92 },
-    { name: 'RTOS (FreeRTOS)', level: 89 },
-    { name: 'Device Drivers', level: 87 },
-    { name: 'Bootloader Development', level: 85 },
-    { name: 'Debugging & Optimization', level: 91 },
+    { name: 'C/C++ Programming', logo: '/logos/cpp.png' },
+    { name: 'ARM Cortex MCUs', logo: '/logos/arm.png' },
+    { name: 'FreeRTOS', logo: '/logos/freertos.png' },
+    { name: 'Device Drivers', logo: '/logos/drivers.png' },
+    { name: 'Bootloader Dev', logo: '/logos/bootloader.png' },
+    { name: 'Debugging', logo: '/logos/debug.png' },
+    { name: 'Embedded Linux', logo: '/logos/linux.png' },
+    { name: 'IoT Dev', logo: '/logos/iot.png' },
   ],
-  protocols: [
-    { name: 'I2C/SPI/UART', level: 96 },
-    { name: 'CAN/CAN-FD', level: 88 },
-    { name: 'Ethernet/TCP-IP', level: 86 },
-    { name: 'USB (2.0/3.0)', level: 84 },
-    { name: 'WiFi/Bluetooth', level: 89 },
-    { name: 'LoRaWAN/Zigbee', level: 82 },
+  hardware: [
+    { name: 'PCB Design', logo: '/logos/PCB.png' },
+    { name: 'Circuit Analysis', logo: '/logos/circuit.png' },
+    { name: 'Component Selection', logo: '/logos/components.png' },
+    { name: 'Signal Integrity', logo: '/logos/signal.png' },
+    { name: 'Power Electronics', logo: '/logos/power.png' },
+    { name: 'EMC/EMI Design', logo: '/logos/emc.png' },
+    { name: 'Schematic Capture', logo: '/logos/schematic.png' },
+    { name: 'DFM/DFT', logo: '/logos/dfm.png' },
   ],
   tools: [
-    { name: 'Altium Designer', level: 95 },
-    { name: 'KiCad', level: 88 },
-    { name: 'MATLAB/Simulink', level: 85 },
-    { name: 'LabVIEW', level: 80 },
-    { name: 'Oscilloscopes/Logic Analyzers', level: 93 },
-    { name: 'JTAG/SWD Debugging', level: 90 },
+    { name: 'Altium Designer', logo: '/logos/altium.png' },
+    { name: 'KiCad', logo: '/logos/kicad.png' },
+    { name: 'MATLAB/Simulink', logo: '/logos/matlab.png' },
+    { name: 'LabVIEW', logo: '/logos/labview.png' },
+    { name: 'Oscilloscope', logo: '/logos/proteus.png' },
+    { name: 'Xillinx', logo: '/logos/xilinx.png' },
+    { name: 'Git/GitHub', logo: '/logos/git.png' },
+    { name: 'Docker', logo: '/logos/docker.png' },
+  ],
+  protocols: [
+    { name: 'I2C/SPI/UART', logo: '/logos/serial.png' },
+    { name: 'CAN/CAN-FD', logo: '/logos/can.png' },
+    { name: 'Ethernet/TCP-IP', logo: '/logos/ethernet.png' },
+    { name: 'USB 2.0/3.0', logo: '/logos/usb.png' },
+    { name: 'WiFi/Bluetooth', logo: '/logos/wifi.png' },
+    { name: 'LoRaWAN/Zigbee', logo: '/logos/lora.png' },
+    { name: 'MQTT/CoAP', logo: '/logos/mqtt.png' },
+    { name: 'Modbus/RS485', logo: '/logos/modbus.png' },
   ],
 };
 
-interface SkillBarProps {
+interface SkillLogoProps {
   name: string;
-  level: number;
-  index: number;
+  logo: string;
 }
 
-function SkillBar({ name, level, index }: SkillBarProps) {
-  const [animatedLevel, setAnimatedLevel] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          setTimeout(() => {
-            setAnimatedLevel(level);
-          }, index * 100);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [level, index]);
-
+function SkillLogo({ name, logo }: SkillLogoProps) {
   return (
-    <div ref={ref} className="space-y-3">
-      <div className="flex justify-between items-center">
-        <span className="text-gray-300 font-medium">{name}</span>
-        <span className="text-orange-500 font-semibold">{level}%</span>
-      </div>
-      <div className="w-full bg-gray-700 rounded-full h-2">
-        <div
-          className="bg-gradient-to-r from-orange-500 to-orange-600 h-2 rounded-full transition-all duration-1000 ease-out"
-          style={{ width: isVisible ? `${animatedLevel}%` : '0%' }}
+    <div className="flex flex-col items-center space-y-2">
+      <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center shadow-md">
+        <Image
+          src={logo}
+          alt={name}
+          width={40}
+          height={40}
+          className="object-contain"
         />
       </div>
+      <span className="text-gray-300 text-sm font-medium text-center">{name}</span>
     </div>
   );
 }
@@ -98,14 +80,8 @@ export function SkillsSection() {
           <div className="w-12 h-1 bg-orange-500 rounded-full" />
         </div>
 
-        <Tabs defaultValue="hardware" className="w-full">
+        <Tabs defaultValue="embedded" className="w-full">
           <TabsList className="grid w-full grid-cols-4 bg-[#1a2332] mb-8 p-1 rounded-lg">
-            <TabsTrigger 
-              value="hardware" 
-              className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-gray-300 rounded-md transition-all duration-300"
-            >
-              Hardware
-            </TabsTrigger>
             <TabsTrigger 
               value="embedded" 
               className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-gray-300 rounded-md transition-all duration-300"
@@ -113,10 +89,10 @@ export function SkillsSection() {
               Embedded
             </TabsTrigger>
             <TabsTrigger 
-              value="protocols" 
+              value="hardware" 
               className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-gray-300 rounded-md transition-all duration-300"
             >
-              Protocols
+              Hardware
             </TabsTrigger>
             <TabsTrigger 
               value="tools" 
@@ -124,18 +100,23 @@ export function SkillsSection() {
             >
               Tools
             </TabsTrigger>
+            <TabsTrigger 
+              value="protocols" 
+              className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-gray-300 rounded-md transition-all duration-300"
+            >
+              Protocols
+            </TabsTrigger>
           </TabsList>
 
           {Object.entries(skillCategories).map(([category, skills]) => (
             <TabsContent key={category} value={category}>
               <Card className="p-8 bg-[#1a2332] border-gray-700">
-                <div className="grid md:grid-cols-2 gap-8">
-                  {skills.map((skill, index) => (
-                    <SkillBar
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8">
+                  {skills.map((skill) => (
+                    <SkillLogo
                       key={skill.name}
                       name={skill.name}
-                      level={skill.level}
-                      index={index}
+                      logo={skill.logo}
                     />
                   ))}
                 </div>
