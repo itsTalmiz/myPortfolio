@@ -42,7 +42,7 @@ const projects = [
     longDescription:
       "Designed and built a robot capable of detecting, tracking, and aiming at moving targets. Integrated Raspberry Pi for high‑level control, implemented object‑tracking algorithms in Python, and fabricated a double‑layer PCB chassis.",
     image:
-      "https://images.pexels.com/photos/534599/pexels-photo-534599.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "/project/SAOTR.png",
     icon: Bot,
     technologies: [
       "Raspberry Pi",
@@ -54,7 +54,7 @@ const projects = [
     category: "Robotics",
     status: "Completed",
     githubUrl: "#",
-    liveUrl: "#",
+    liveUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7089844394522025984/",
     gradient: "from-purple-500 to-indigo-600",
   },
   {
@@ -65,13 +65,13 @@ const projects = [
     longDescription:
       "Developed optimized convolution algorithms in Verilog on a Xilinx FPGA, streaming VGA output of original and convolved images. Achieved real‑time performance with minimal resource utilization.",
     image:
-      "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "/project/image_conv.jpeg",
     icon: MessageSquare,
     technologies: ["Verilog", "FPGA", "Xilinx", "VGA", "Digital Design"],
     category: "Digital Design",
     status: "Completed",
     githubUrl: "#",
-    liveUrl: "#",
+    liveUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7076157169204666368/",
     gradient: "from-red-500 to-pink-600",
   },
   {
@@ -82,7 +82,7 @@ const projects = [
     longDescription:
       "Engineered an Arduino‑based robot capable of line following, sumo battling, and obstacle avoidance. Designed interactive Sumo competition app and used a double‑layer PCB as the chassis.",
     image:
-      "https://images.pexels.com/photos/257393/robotic-arm-hour-weather-257393.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "/project/LFR.jpeg",
     icon: GitBranch,
     technologies: [
       "Arduino",
@@ -94,7 +94,7 @@ const projects = [
     category: "Robotics",
     status: "Completed",
     githubUrl: "#",
-    liveUrl: "#",
+    liveUrl: "https://www.linkedin.com/feed/update/urn:li:activity:6890727805563604992/",
     gradient: "from-blue-400 to-teal-500",
   }
 ];
