@@ -1,7 +1,23 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronDown, Github, Linkedin, Mail, FileText, Cpu, Zap, Wifi } from 'lucide-react';
+import { 
+  ChevronDown, 
+  Github, 
+  Linkedin, 
+  Mail, 
+  FileText, 
+  Cpu, 
+  Zap, 
+  Wifi, 
+  Code, 
+  CircuitBoard, 
+  Timer, 
+  Radio, 
+  Server, 
+  FileCode, 
+  Binary 
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from "next/image"
 import Link from "next/link"
@@ -15,14 +31,14 @@ const roles = [
 ];
 
 const technologies = [
-  { name: 'Embedded C', icon: Cpu },
-  { name: 'C++', icon: Zap },
-  { name: 'PCB Design', icon: Cpu },
-  { name: 'RTOS', icon: Zap },
-  { name: 'IoT Protocols', icon: Wifi },
-  { name: 'Embedded Linux', icon: Cpu },
-  { name: 'Firmware Development', icon: Zap },
-  { name: 'Verilog', icon: Wifi }
+  { name: 'Embedded C', icon: Code },                 // Code → programming
+  { name: 'C++', icon: FileCode },                   // FileCode → source code
+  { name: 'PCB Design', icon: CircuitBoard },        // CircuitBoard → PCB work
+  { name: 'RTOS', icon: Timer },                     // Timer → scheduling / timing
+  { name: 'IoT Protocols', icon: Radio },            // Radio → communication
+  { name: 'Embedded Linux', icon: Server },          // Server → Linux system
+  { name: 'Firmware Development', icon: Cpu },       // CPU → firmware on hardware
+  { name: 'Verilog', icon: Binary },                 // Binary → HDL / digital logic
 ];
 
 // Hardware-themed floating particles
