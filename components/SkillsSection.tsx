@@ -27,7 +27,7 @@ const skillCategories = {
   ],
   tools: [
     { name: 'Altium Designer', logo: '/logos/altium.png' },
-    { name: 'KiCad', logo: '/logos/kicad.png' },
+    { name: 'EasyEDA', logo: '/logos/EasyEDA.png' },
     { name: 'MATLAB/Simulink', logo: '/logos/matlab.png' },
     { name: 'LabVIEW', logo: '/logos/labview.png' },
     { name: 'Oscilloscope', logo: '/logos/proteus.png' },

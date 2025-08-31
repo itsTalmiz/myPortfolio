@@ -10,11 +10,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Talmiz ur Rehman - Hardware Embedded Systems Engineer',
-  description: 'Professional portfolio of Alex Thompson, a passionate Hardware Embedded Systems Engineer specializing in IoT, PCB design, and firmware development.',
+  description: 'Professional portfolio of Talmiz ur Rehman, a passionate Hardware Embedded Systems Engineer specializing in IoT, PCB design, and firmware development.',
   keywords: 'hardware engineer, embedded systems, IoT, PCB design, firmware development, electronics',
-  authors: [{ name: 'Alex Thompson' }],
-  creator: 'Alex Thompson',
-  publisher: 'Alex Thompson',
+  authors: [{ name: 'Talmiz ur Rehman' }],
+  creator: 'Talmiz ur Rehman',
+  publisher: 'Talmiz ur Rehman',
   robots: 'index, follow',
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#0f172a',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Talmiz ur Rehman - Hardware Embedded Systems Engineer',
     description: 'Professional portfolio showcasing innovative hardware solutions and embedded systems development.',
-    siteName: 'Alex Thompson Portfolio',
+    siteName: 'Talmiz ur Rehman Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
@@ -32,6 +32,15 @@ export const metadata: Metadata = {
     description: 'Professional portfolio showcasing innovative hardware solutions and embedded systems development.',
     creator: '@HaseeburRehma',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
