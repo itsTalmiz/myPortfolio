@@ -29,7 +29,7 @@ const projects = [
       "Flex PCB Design",
     ],
     category: "Embedded Systems",
-    status: "Completed",
+    status: "In Progress",
     githubUrl: "#",
     liveUrl: "#",
     gradient: "from-yellow-400 to-orange-500",
