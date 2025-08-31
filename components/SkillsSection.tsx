@@ -30,7 +30,7 @@ const skillCategories = {
     { name: 'EasyEDA', logo: '/logos/EasyEDA.png' },
     { name: 'MATLAB/Simulink', logo: '/logos/matlab.png' },
     { name: 'LabVIEW', logo: '/logos/labview.png' },
-    { name: 'Oscilloscope', logo: '/logos/proteus.png' },
+    { name: 'Proteus', logo: '/logos/proteus.png' },
     { name: 'Xillinx', logo: '/logos/xilinx.png' },
     { name: 'Git/GitHub', logo: '/logos/git.png' },
     { name: 'Docker', logo: '/logos/docker.png' },
