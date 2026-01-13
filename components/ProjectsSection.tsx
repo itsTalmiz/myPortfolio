@@ -13,11 +13,11 @@ import { Github, ExternalLink, Cpu, Wifi, Zap, Shield, ArrowUpRight, Play, Pause
 const projects = [
  {
     id: 1,
-    title: "Table Side AI Device",
+    title: "AI Device",
     description:
-      "Design and development of an interactive table‑side AI device",
+      "Design and development of an interactive AI device",
     longDescription:
-      "Developed system firmware on Quectel SC668S SOM, integrating display, touch, and camera modules for real‑time interaction. Implemented battery management, fast charging, reverse wireless charging logic, and designed high‑speed flex & multilayer PCBs with advanced signal integrity and EMI control.",
+      "Developed system firmware on Quectel SOM, integrating display, touch, and camera modules for real‑time interaction. Implemented battery management, fast charging, reverse wireless charging logic, and designed high‑speed flex & multilayer PCBs with advanced signal integrity and EMI control.",
     image:
       "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
     icon: Monitor,
