@@ -2,7 +2,31 @@
 
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Reveal } from '@/components/Reveal';
 import Image from 'next/image';
+import {
+  Smartphone,
+  Layers,
+  RefreshCw,
+  Bug,
+  Activity,
+  Waves,
+  BarChart3,
+  Factory,
+  KeyRound,
+  ShieldCheck,
+  CheckCircle2,
+  Users,
+  Cable,
+  Route,
+  Network,
+  Usb,
+  Wifi,
+  Radio,
+  MessageSquare,
+  CircuitBoard,
+  type LucideIcon,
+} from 'lucide-react';
 
 const skillCategories = {
   embedded: [
@@ -14,6 +38,9 @@ const skillCategories = {
     { name: 'Debugging', logo: '/logos/debug.png' },
     { name: 'Embedded Linux', logo: '/logos/linux.png' },
     { name: 'IoT Dev', logo: '/logos/iot.png' },
+    { name: 'AOSP / Android', icon: Smartphone },
+    { name: 'BSP & Kernel', icon: Layers },
+    { name: 'OTA Updates', icon: RefreshCw },
   ],
   hardware: [
     { name: 'PCB Design', logo: '/logos/PCB.png' },
@@ -34,96 +61,106 @@ const skillCategories = {
     { name: 'Xillinx', logo: '/logos/xilinx.png' },
     { name: 'Git/GitHub', logo: '/logos/git.png' },
     { name: 'Docker', logo: '/logos/docker.png' },
+    { name: 'GDB', icon: Bug },
+    { name: 'Oscilloscope', icon: Activity },
+    { name: 'Logic Analyzer', icon: Waves },
+    { name: 'Perfetto', icon: BarChart3 },
+  ],
+  production: [
+    { name: 'SMT Oversight', icon: Factory },
+    { name: 'GMS Key Flashing/Provisioning', icon: KeyRound },
+    { name: 'FCC Compliance (EMI/EMC, ESD, OTA)', icon: ShieldCheck },
+    { name: 'Validation & Burn-in', icon: CheckCircle2 },
+    { name: 'Mentoring Engineers', icon: Users },
   ],
   protocols: [
-    { name: 'I2C/SPI/UART', logo: '/logos/serial.png' },
-    { name: 'CAN/CAN-FD', logo: '/logos/can.png' },
-    { name: 'Ethernet/TCP-IP', logo: '/logos/ethernet.png' },
-    { name: 'USB 2.0/3.0', logo: '/logos/usb.png' },
-    { name: 'WiFi/Bluetooth', logo: '/logos/wifi.png' },
-    { name: 'LoRaWAN/Zigbee', logo: '/logos/lora.png' },
-    { name: 'MQTT/CoAP', logo: '/logos/mqtt.png' },
-    { name: 'Modbus/RS485', logo: '/logos/modbus.png' },
+    { name: 'I2C/SPI/UART', icon: Cable },
+    { name: 'CAN/CAN-FD', icon: Route },
+    { name: 'Ethernet/TCP-IP', icon: Network },
+    { name: 'USB 2.0/3.0', icon: Usb },
+    { name: 'WiFi/Bluetooth', icon: Wifi },
+    { name: 'LoRaWAN/Zigbee', icon: Radio },
+    { name: 'MQTT/CoAP', icon: MessageSquare },
+    { name: 'Modbus/RS485', icon: CircuitBoard },
   ],
 };
 
 interface SkillLogoProps {
   name: string;
-  logo: string;
+  logo?: string;
+  icon?: LucideIcon;
 }
 
-function SkillLogo({ name, logo }: SkillLogoProps) {
+function SkillLogo({ name, logo, icon: Icon }: SkillLogoProps) {
   return (
-    <div className="flex flex-col items-center space-y-2">
-      <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center shadow-md">
-        <Image
-          src={logo}
-          alt={name}
-          width={40}
-          height={40}
-          className="object-contain"
-        />
+    <div className="group flex flex-col items-center space-y-2">
+      <div className="w-16 h-16 glass border-foreground/[0.06] rounded-xl flex items-center justify-center shadow-md group-hover:border-emerald-500/30 group-hover:scale-105 transition-all duration-300">
+        {logo ? (
+          <Image
+            src={logo}
+            alt={name}
+            width={40}
+            height={40}
+            className="object-contain"
+          />
+        ) : Icon ? (
+          <Icon className="w-6 h-6 text-emerald-400" />
+        ) : null}
       </div>
-      <span className="text-gray-300 text-sm font-medium text-center">{name}</span>
+      <span className="text-muted-foreground text-sm font-medium text-center group-hover:text-foreground/80 transition-colors">{name}</span>
     </div>
   );
 }
 
+const tabValues = ['embedded', 'hardware', 'tools', 'production', 'protocols'] as const;
+const tabLabels: Record<(typeof tabValues)[number], string> = {
+  embedded: 'Embedded',
+  hardware: 'Hardware',
+  tools: 'Tools',
+  production: 'Production',
+  protocols: 'Protocols',
+};
+
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-20 bg-[#243447]">
+    <section id="skills" className="py-24 bg-card/40 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Technical Skills
-          </h2>
-          <div className="w-12 h-1 bg-orange-500 rounded-full" />
-        </div>
+        <Reveal>
+          <div className="mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Technical Skills
+            </h2>
+            <div className="w-12 h-1 bg-emerald-500 rounded-full" />
+          </div>
+        </Reveal>
 
-        <Tabs defaultValue="embedded" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 bg-[#1a2332] mb-8 p-1 rounded-lg">
-            <TabsTrigger 
-              value="embedded" 
-              className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-gray-300 rounded-md transition-all duration-300"
-            >
-              Embedded
-            </TabsTrigger>
-            <TabsTrigger 
-              value="hardware" 
-              className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-gray-300 rounded-md transition-all duration-300"
-            >
-              Hardware
-            </TabsTrigger>
-            <TabsTrigger 
-              value="tools" 
-              className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-gray-300 rounded-md transition-all duration-300"
-            >
-              Tools
-            </TabsTrigger>
-            <TabsTrigger 
-              value="protocols" 
-              className="data-[state=active]:bg-orange-500 data-[state=active]:text-white text-gray-300 rounded-md transition-all duration-300"
-            >
-              Protocols
-            </TabsTrigger>
-          </TabsList>
+        <Reveal delay={100}>
+          <Tabs defaultValue="embedded" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5 gap-1 glass border-foreground/[0.06] mb-8 p-1 rounded-lg h-auto">
+              {tabValues.map((value) => (
+                <TabsTrigger
+                  key={value}
+                  value={value}
+                  className="data-[state=active]:bg-emerald-500 data-[state=active]:text-background text-muted-foreground rounded-md transition-all duration-300"
+                >
+                  {tabLabels[value]}
+                </TabsTrigger>
+              ))}
+            </TabsList>
 
-          {Object.entries(skillCategories).map(([category, skills]) => (
-            <TabsContent key={category} value={category}>
-              <Card className="p-8 bg-[#1a2332] border-gray-700">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8">
-                  {skills.map((skill) => (
-                    <SkillLogo
-                      key={skill.name}
-                      name={skill.name}
-                      logo={skill.logo}
-                    />
-                  ))}
-                </div>
-              </Card>
-            </TabsContent>
-          ))}
-        </Tabs>
+            {Object.entries(skillCategories).map(([category, skills]) => (
+              <TabsContent key={category} value={category}>
+                <Card className="p-8 glass border-foreground/[0.06]">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8">
+                    {skills.map((skill) => (
+                      <SkillLogo key={skill.name} {...skill} />
+                    ))}
+                  </div>
+                </Card>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </Reveal>
       </div>
     </section>
   );

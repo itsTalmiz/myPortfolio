@@ -8,37 +8,34 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
+import { Reveal } from '@/components/Reveal';
 
 const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'mtalmiz@gmail.com',
-    href: 'mailto:mtalmiz@gmail.com',
-    color: 'from-blue-500 to-cyan-500',
+    value: 'mtalmiz1234@gmail.com',
+    href: 'mailto:mtalmiz1234@gmail.com',
   },
   {
     icon: Phone,
     label: 'Phone',
     value: '+92 336 5267868',
     href: 'tel:+923365267868',
-    color: 'from-green-500 to-emerald-500',
   },
   {
     icon: MapPin,
     label: 'Location',
     value: 'Islamabad, Pakistan',
     href: '#',
-    color: 'from-orange-500 to-red-500',
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
     value: '/in/itstalmiz',
     href: 'https://www.linkedin.com/in/itstalmiz/',
-    color: 'from-blue-600 to-blue-700',
   },
- 
+
 ];
 
 interface FormData {
@@ -140,62 +137,47 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#1a2332] relative overflow-hidden">
-      {/* Hardware Background Animation */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" viewBox="0 0 1000 1000">
-          <defs>
-            <pattern id="contact-circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <rect width="100" height="100" fill="none" stroke="#f97316" strokeWidth="0.5"/>
-              <circle cx="20" cy="20" r="2" fill="#f97316" opacity="0.6">
-                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="80" cy="80" r="2" fill="#f97316" opacity="0.6">
-                <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <path d="M20 20L80 80M80 20L20 80" stroke="#f97316" strokeWidth="0.3" opacity="0.4"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#contact-circuit)"/>
-        </svg>
-      </div>
+    <section id="contact" className="py-24 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-20 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_100%,#000_30%,transparent_100%)]" />
+      <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-emerald-500/[0.06] rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 animate-slide-in-up">
-            Get In Touch
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-orange-500 to-orange-300 rounded-full mx-auto mb-6" />
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Ready to bring your hardware project to life? Let's discuss your embedded systems needs and create something amazing together.
-          </p>
-        </div>
+        <Reveal>
+          <div className="mb-16 text-center">
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Get In Touch
+            </h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-sky-400 rounded-full mx-auto mb-6" />
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Ready to bring your hardware project to life? Let's discuss your embedded systems needs and create something amazing together.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8 animate-slide-in-left">
-            <Card className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50 hover:border-orange-500/30 transition-all duration-300 p-6">
+          <Reveal className="space-y-8">
+            <Card className="glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-300 p-6">
               <CardHeader>
-                <CardTitle className="text-white text-xl mb-4 flex items-center">
-                  <Mail className="w-6 h-6 mr-3 text-orange-500" />
+                <CardTitle className="text-foreground text-xl mb-4 flex items-center">
+                  <Mail className="w-6 h-6 mr-3 text-emerald-400" />
                   Contact Information
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 {contactInfo.map((contact, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-center space-x-4 group animate-slide-in-left"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                  <div
+                    key={index}
+                    className="flex items-center space-x-4 group"
                   >
-                    <div className={`w-12 h-12 bg-gradient-to-br ${contact.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                      <contact.icon className="w-5 h-5 text-white" />
+                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/15 transition-all duration-300">
+                      <contact.icon className="w-5 h-5 text-emerald-400" />
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm font-medium">{contact.label}</p>
+                      <p className="text-muted-foreground text-sm font-medium">{contact.label}</p>
                       <a
                         href={contact.href}
-                        className="text-white hover:text-orange-400 transition-colors font-medium text-lg"
+                        className="text-foreground hover:text-emerald-400 transition-colors font-medium text-lg"
                         target={contact.href.startsWith('http') ? '_blank' : undefined}
                         rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       >
@@ -207,9 +189,9 @@ export function ContactSection() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50 hover:border-orange-500/30 transition-all duration-300 p-6">
+            <Card className="glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-300 p-6">
               <CardHeader>
-                <CardTitle className="text-white text-xl mb-4">
+                <CardTitle className="text-foreground text-xl mb-4">
                   Available For
                 </CardTitle>
               </CardHeader>
@@ -223,24 +205,25 @@ export function ContactSection() {
                     'Technical Mentorship',
                     'Speaking Engagements'
                   ].map((service, index) => (
-                    <div 
+                    <div
                       key={index}
-                      className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30 hover:border-orange-500/50 transition-all duration-300 group"
+                      className="flex items-center space-x-3 p-3 glass border-foreground/[0.06] rounded-lg hover:border-emerald-500/30 transition-all duration-300 group"
                     >
-                      <div className="w-2 h-2 bg-orange-500 rounded-full group-hover:animate-pulse" />
-                      <span className="text-gray-300 group-hover:text-white transition-colors">{service}</span>
+                      <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full group-hover:animate-pulse" />
+                      <span className="text-muted-foreground group-hover:text-foreground transition-colors">{service}</span>
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </Reveal>
 
-          {/* Enhanced Contact Form */}
-          <Card className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50 hover:border-orange-500/30 transition-all duration-300 animate-slide-in-right">
+          {/* Contact Form */}
+          <Reveal delay={150}>
+          <Card className="glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-300">
             <CardHeader>
-              <CardTitle className="text-white text-xl flex items-center">
-                <Send className="w-6 h-6 mr-3 text-orange-500" />
+              <CardTitle className="text-foreground text-xl flex items-center">
+                <Send className="w-6 h-6 mr-3 text-emerald-400" />
                 Send a Message
               </CardTitle>
             </CardHeader>
@@ -248,7 +231,7 @@ export function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-gray-300 font-medium">
+                    <Label htmlFor="name" className="text-muted-foreground font-medium">
                       Full Name *
                     </Label>
                     <Input
@@ -256,7 +239,7 @@ export function ContactSection() {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className={`bg-gray-800/50 border-gray-600 text-white focus:border-orange-500 focus:ring-orange-500/20 transition-all duration-300 ${
+                      className={`bg-foreground/[0.03] border-foreground/[0.1] text-foreground focus:border-emerald-500 focus:ring-emerald-500/20 transition-all duration-300 ${
                         errors.name ? 'border-red-500 focus:border-red-500' : ''
                       }`}
                       placeholder="John Doe"
@@ -269,7 +252,7 @@ export function ContactSection() {
                     )}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-gray-300 font-medium">
+                    <Label htmlFor="email" className="text-muted-foreground font-medium">
                       Email Address *
                     </Label>
                     <Input
@@ -278,7 +261,7 @@ export function ContactSection() {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`bg-gray-800/50 border-gray-600 text-white focus:border-orange-500 focus:ring-orange-500/20 transition-all duration-300 ${
+                      className={`bg-foreground/[0.03] border-foreground/[0.1] text-foreground focus:border-emerald-500 focus:ring-emerald-500/20 transition-all duration-300 ${
                         errors.email ? 'border-red-500 focus:border-red-500' : ''
                       }`}
                       placeholder="john@example.com"
@@ -293,7 +276,7 @@ export function ContactSection() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-gray-300 font-medium">
+                  <Label htmlFor="subject" className="text-muted-foreground font-medium">
                     Subject *
                   </Label>
                   <Input
@@ -301,7 +284,7 @@ export function ContactSection() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className={`bg-gray-800/50 border-gray-600 text-white focus:border-orange-500 focus:ring-orange-500/20 transition-all duration-300 ${
+                    className={`bg-foreground/[0.03] border-foreground/[0.1] text-foreground focus:border-emerald-500 focus:ring-emerald-500/20 transition-all duration-300 ${
                       errors.subject ? 'border-red-500 focus:border-red-500' : ''
                     }`}
                     placeholder="Hardware Project Collaboration"
@@ -315,7 +298,7 @@ export function ContactSection() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-gray-300 font-medium">
+                  <Label htmlFor="message" className="text-muted-foreground font-medium">
                     Message *
                   </Label>
                   <Textarea
@@ -324,7 +307,7 @@ export function ContactSection() {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={6}
-                    className={`bg-gray-800/50 border-gray-600 text-white focus:border-orange-500 focus:ring-orange-500/20 transition-all duration-300 resize-none ${
+                    className={`bg-foreground/[0.03] border-foreground/[0.1] text-foreground focus:border-emerald-500 focus:ring-emerald-500/20 transition-all duration-300 resize-none ${
                       errors.message ? 'border-red-500 focus:border-red-500' : ''
                     }`}
                     placeholder="Tell me about your hardware project, requirements, timeline, and any specific challenges you're facing..."
@@ -335,7 +318,7 @@ export function ContactSection() {
                       {errors.message}
                     </p>
                   )}
-                  <p className="text-gray-500 text-xs">
+                  <p className="text-muted-foreground text-xs">
                     {formData.message.length}/500 characters
                   </p>
                 </div>
@@ -343,7 +326,7 @@ export function ContactSection() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full bg-emerald-500 hover:bg-emerald-400 text-background py-3 transition-all duration-300 hover:scale-105 hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center space-x-2">
@@ -364,9 +347,9 @@ export function ContactSection() {
                 </Button>
 
                 {/* Privacy Notice */}
-                <p className="text-gray-500 text-xs text-center">
+                <p className="text-muted-foreground text-xs text-center">
                   By submitting this form, you agree to our{' '}
-                  <a href="/privacy-policy" className="text-orange-400 hover:text-orange-300 underline">
+                  <a href="/privacy-policy" className="text-emerald-400 hover:text-emerald-300 underline">
                     Privacy Policy
                   </a>
                   . Your information will be kept confidential and used only to respond to your inquiry.
@@ -374,6 +357,7 @@ export function ContactSection() {
               </form>
             </CardContent>
           </Card>
+          </Reveal>
         </div>
       </div>
     </section>

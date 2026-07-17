@@ -1,58 +1,39 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { 
-  ChevronDown, 
-  Github, 
-  Linkedin, 
-  Mail, 
-  FileText, 
-  Cpu, 
-  Zap, 
-  Wifi, 
-  Code, 
-  CircuitBoard, 
-  Timer, 
-  Radio, 
-  Server, 
-  FileCode, 
-  Binary 
+import {
+  ChevronDown,
+  FileText,
+  Cpu,
+  Code,
+  CircuitBoard,
+  Timer,
+  Radio,
+  Server,
+  FileCode,
+  Binary,
+  ArrowUpRight,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import Image from "next/image"
-import Link from "next/link"
+import Link from 'next/link';
 
 const roles = [
-  'Hardware Design Engineer',
-  'Embedded Systems Developer',
+  'Senior Hardware Design Engineer',
+  'Embedded Firmware Engineer',
+  'AOSP & BSP Developer',
   'PCB Designer',
-  //'IoT Architect',
-  'Firmware Developer',
 ];
 
 const technologies = [
-  { name: 'Embedded C', icon: Code },                 // Code → programming
-  { name: 'C++', icon: FileCode },                   // FileCode → source code
-  { name: 'PCB Design', icon: CircuitBoard },        // CircuitBoard → PCB work
-  { name: 'RTOS', icon: Timer },                     // Timer → scheduling / timing
-  { name: 'IoT Protocols', icon: Radio },            // Radio → communication
-  { name: 'Embedded Linux', icon: Server },          // Server → Linux system
-  { name: 'Firmware Development', icon: Cpu },       // CPU → firmware on hardware
-  { name: 'Verilog', icon: Binary },                 // Binary → HDL / digital logic
+  { name: 'Embedded C', icon: Code },
+  { name: 'C++', icon: FileCode },
+  { name: 'PCB Design', icon: CircuitBoard },
+  { name: 'RTOS', icon: Timer },
+  { name: 'AOSP/Android', icon: Radio },
+  { name: 'Embedded Linux', icon: Server },
+  { name: 'Firmware Development', icon: Cpu },
+  { name: 'Verilog', icon: Binary },
 ];
-
-// Hardware-themed floating particles
-const FloatingParticle = ({ delay, duration, size }: { delay: number; duration: number; size: number }) => (
-  <div
-    className={`absolute w-${size} h-${size} bg-orange-500/20 rounded-full animate-float`}
-    style={{
-      animationDelay: `${delay}s`,
-      animationDuration: `${duration}s`,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-    }}
-  />
-);
 
 export function HeroSection() {
   const [currentRole, setCurrentRole] = useState(0);
@@ -89,59 +70,47 @@ export function HeroSection() {
   };
 
   return (
-    <section id="home" className="min-h-screen bg-[#1a2332] relative overflow-hidden">
-      {/* Hardware Circuit Pattern Background */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 1000 1000" fill="none">
-          <defs>
-            <pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M10 10h80v80h-80z" stroke="#f97316" strokeWidth="0.5" fill="none" />
-              <circle cx="20" cy="20" r="2" fill="#f97316" />
-              <circle cx="80" cy="80" r="2" fill="#f97316" />
-              <path d="M20 20L80 80M80 20L20 80" stroke="#f97316" strokeWidth="0.3" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#circuit)" />
-        </svg>
-      </div>
+    <section id="home" className="min-h-screen bg-background relative overflow-hidden">
+      {/* Ambient dot-grid */}
+      <div className="absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000_40%,transparent_100%)]" />
 
-      {/* Floating Hardware Elements */}
-      {Array.from({ length: 15 }).map((_, i) => (
-        <FloatingParticle
-          key={i}
-          delay={i * 0.5}
-          duration={3 + (i % 3)}
-          size={1 + (i % 3)}
-        />
-      ))}
+      {/* Ambient glow blobs */}
+      <div className="absolute top-0 left-1/4 w-[32rem] h-[32rem] bg-emerald-500/10 rounded-full blur-[120px] animate-blob" />
+      <div className="absolute bottom-0 right-1/4 w-[28rem] h-[28rem] bg-sky-500/10 rounded-full blur-[120px] animate-blob" style={{ animationDelay: '4s' }} />
 
-      {/* Animated Circuit Lines */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-0.5 bg-gradient-to-r from-orange-500 to-transparent animate-pulse-slow" />
-        <div className="absolute top-40 right-40 w-0.5 h-24 bg-gradient-to-b from-orange-500 to-transparent animate-pulse-slow" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-40 left-40 w-24 h-0.5 bg-gradient-to-r from-transparent to-orange-500 animate-pulse-slow" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-20 right-20 w-0.5 h-32 bg-gradient-to-t from-transparent to-orange-500 animate-pulse-slow" style={{ animationDelay: '3s' }} />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center pt-24 pb-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left Content */}
           <div className="space-y-8 animate-slide-in-left">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-white animate-fade-in">
-                Hello<span className="text-orange-500 animate-pulse">.</span>
-              </h1>
-              <div className="space-y-2">
-                <p className="text-2xl text-gray-300 animate-slide-in-left" style={{ animationDelay: '0.2s' }}>I'm Talmiz Ur Rehman</p>
-                <div className="h-12">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white">
-                    {displayText}<span className="animate-blink text-orange-500">|</span>
-                  </h2>
-                </div>
+            <div className="space-y-5">
+              <div
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-mono-tech text-emerald-400 animate-fade-in"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                </span>
+                available_for_work: true
               </div>
+
+              <h1 className="text-5xl lg:text-6xl font-bold text-foreground animate-fade-in">
+                Hi, I&apos;m <span className="gradient-text">Talmiz</span>
+                <span className="text-emerald-400">.</span>
+              </h1>
+
+              <div className="h-10 sm:h-12">
+                <h2 className="text-2xl lg:text-3xl font-semibold text-foreground/90 font-mono-tech">
+                  {displayText}<span className="animate-blink text-emerald-400">_</span>
+                </h2>
+              </div>
+
+              <p className="text-muted-foreground text-lg max-w-lg">
+                I design and ship firmware for ARM-based Qualcomm platforms — from board bring-up
+                and BSP customization to AOSP, OTA delivery, and the PCBs underneath it all.
+              </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
               <Link
                 href="https://www.linkedin.com/in/itstalmiz/"
                 target="_blank"
@@ -150,19 +119,20 @@ export function HeroSection() {
               >
                 <Button
                   size="lg"
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 btn-animate relative overflow-hidden group"
+                  className="bg-emerald-500 hover:bg-emerald-400 text-background px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-glow btn-animate relative overflow-hidden group w-full sm:w-auto"
                 >
-                  <span className="relative z-10">Got a project?</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <span className="relative z-10 flex items-center gap-2">
+                    Got a project?
+                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
                 </Button>
               </Link>
 
-              {/* Resume */}
-              <Link href="/Resume_MTalmizUrRehman.pdf" target="_blank" rel="noopener noreferrer" passHref>
+              <Link href="/Resume_MTalmizUrRehman__General.pdf" target="_blank" rel="noopener noreferrer" passHref>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-gray-600 text-gray-300 hover:text-white hover:border-orange-500 hover:bg-orange-500/10 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                  className="glass border-foreground/[0.08] text-foreground/90 hover:text-emerald-400 hover:border-emerald-500/40 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 w-full sm:w-auto"
                 >
                   <FileText className="w-4 h-4 mr-2" />
                   My resume
@@ -170,66 +140,72 @@ export function HeroSection() {
               </Link>
             </div>
 
-            {/* Technologies Grid with Hardware Icons */}
-            <div className="grid grid-cols-4 gap-4 pt-8 animate-slide-in-left" style={{ animationDelay: '0.6s' }}>
+            {/* Technologies Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
               {technologies.map((tech, index) => (
                 <div
                   key={index}
-                  className="group text-center p-3 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300 hover:scale-105 hover:bg-orange-500/10"
-                  style={{ animationDelay: `${0.8 + index * 0.1}s` }}
+                  className="group text-center p-3 rounded-xl glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-300 hover:scale-105 hover:bg-emerald-500/[0.06]"
                 >
-                  <tech.icon className="w-6 h-6 mx-auto mb-2 text-orange-500 group-hover:animate-pulse" />
-                  <span className="text-gray-400 text-xs font-medium group-hover:text-orange-400 transition-colors">{tech.name}</span>
+                  <tech.icon className="w-5 h-5 mx-auto mb-2 text-emerald-400 group-hover:animate-pulse" />
+                  <span className="text-muted-foreground text-[11px] font-medium group-hover:text-emerald-300 transition-colors leading-tight">{tech.name}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Content - Profile Image with Hardware Container */}
+          {/* Right Content - Profile Image */}
           <div className="flex justify-center lg:justify-end animate-slide-in-right">
             <div className="relative">
-              {/* Hardware-themed Container Border */}
-              <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-                {/* Outer Circuit Ring */}
-                <div className="absolute inset-0 rounded-full border-4 border-orange-500/30 animate-spin-slow">
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2 w-4 h-4 bg-orange-500 rounded-full animate-pulse" />
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-2 w-4 h-4 bg-orange-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-2 w-4 h-4 bg-orange-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
-                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-2 w-4 h-4 bg-orange-500 rounded-full animate-pulse" style={{ animationDelay: '3s' }} />
-                </div>
+              <div className="relative w-72 h-72 lg:w-96 lg:h-96">
+                {/* Glow ring */}
+                <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-emerald-500/20 via-transparent to-sky-500/20 blur-2xl" />
 
-                {/* Inner Gradient Border */}
-                <div className="absolute inset-4 rounded-full bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 p-1 animate-pulse-orange">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 border-4 border-gray-900">
+                {/* Glass frame */}
+                <div className="relative w-full h-full rounded-[2rem] glass border-foreground/[0.08] p-2 shadow-2xl">
+                  <div className="relative w-full h-full rounded-[1.6rem] overflow-hidden">
                     <img
                       src="/talmiz.jpeg"
-                      alt="talmiz"
-                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                      alt="Talmiz"
+                      className="w-full h-full object-cover grayscale-[55%] contrast-[1.05] saturate-75 transition-transform duration-700 hover:scale-105"
                     />
+                    {/* Color-match overlay: pulls the photo's warm background toward the
+                        site's slate/emerald palette instead of clashing with it */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-transparent to-emerald-500/25 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                   </div>
                 </div>
 
-                {/* Hardware Corner Elements */}
-                <div className="absolute -top-2 -right-2 w-6 h-6 border-2 border-orange-500 rotate-45 bg-[#1a2332] animate-pulse" />
-                <div className="absolute -bottom-2 -left-2 w-4 h-4 border-2 border-orange-500 rotate-45 bg-[#1a2332] animate-pulse" style={{ animationDelay: '1s' }} />
-                <div className="absolute top-1/4 -right-4 w-3 h-3 bg-orange-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
-                <div className="absolute bottom-1/4 -left-4 w-3 h-3 bg-orange-500 rounded-full animate-pulse" style={{ animationDelay: '3s' }} />
+                {/* Floating status card */}
+                <div className="absolute -bottom-5 -left-5 glass border-foreground/[0.08] rounded-xl px-4 py-3 shadow-xl animate-float">
+                  <div className="flex items-center gap-2">
+                    <Cpu className="w-4 h-4 text-emerald-400" />
+                    <div className="font-mono-tech text-xs">
+                      <div className="text-foreground font-semibold">QCM6125</div>
+                      <div className="text-muted-foreground">firmware.flash()</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute -top-4 -right-4 glass border-foreground/[0.08] rounded-full px-3 py-1.5 shadow-xl animate-float" style={{ animationDelay: '1.5s' }}>
+                  <span className="font-mono-tech text-xs text-emerald-400">3+ yrs</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator with Hardware Theme */}
+      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <Button
           variant="ghost"
           onClick={scrollToNext}
-          className="text-gray-400 hover:text-orange-500 transition-colors duration-300 group"
+          className="text-muted-foreground hover:text-emerald-400 transition-colors duration-300 group"
         >
           <div className="flex flex-col items-center space-y-2">
             <ChevronDown className="w-6 h-6 group-hover:animate-pulse" />
-            <div className="w-0.5 h-8 bg-gradient-to-b from-orange-500 to-transparent" />
+            <div className="w-0.5 h-8 bg-gradient-to-b from-emerald-500 to-transparent" />
           </div>
         </Button>
       </div>

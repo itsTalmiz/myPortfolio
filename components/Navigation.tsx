@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const navItems = [
   { href: '#home', label: 'Home' },
@@ -19,7 +20,7 @@ export function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      
+
       const sections = navItems.map(item => item.href.substring(1));
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
@@ -29,7 +30,7 @@ export function Navigation() {
         }
         return false;
       });
-      
+
       if (currentSection) {
         setActiveSection(currentSection);
       }
@@ -47,40 +48,47 @@ export function Navigation() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-[#1a2332]/95 backdrop-blur-md border-b border-gray-800' : 'bg-transparent'
+      scrolled ? 'glass border-b border-foreground/[0.08]' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="text-white font-bold text-xl">
-            Talmiz Ur Rehman
-          </div>
+          <button
+            onClick={() => scrollToSection('#home')}
+            className="font-mono-tech text-emerald-400 font-semibold text-lg tracking-tight flex items-center gap-1.5 cursor-pointer"
+          >
+            <span className="text-foreground/40">&lt;</span>
+            Talmiz
+            <span className="text-foreground/40">/&gt;</span>
+          </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-2">
+            <div className="flex items-center space-x-1">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`text-sm font-medium transition-all duration-300 hover:text-orange-500 ${
+                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 cursor-pointer ${
                     activeSection === item.href.substring(1)
-                      ? 'text-orange-500'
-                      : 'text-gray-300'
+                      ? 'text-emerald-400 bg-emerald-500/10'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-foreground/[0.04]'
                   }`}
                 >
                   {item.label}
                 </button>
               ))}
             </div>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Navigation Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-1">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white"
+              className="text-muted-foreground hover:text-foreground"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
@@ -91,15 +99,15 @@ export function Navigation() {
       {/* Mobile Navigation Menu */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#1a2332]/95 backdrop-blur-md border-b border-gray-800">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 glass border-b border-foreground/[0.08]">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`block w-full text-left px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-orange-500 ${
+                className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 cursor-pointer ${
                   activeSection === item.href.substring(1)
-                    ? 'text-orange-500'
-                    : 'text-gray-300'
+                    ? 'text-emerald-400 bg-emerald-500/10'
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 {item.label}

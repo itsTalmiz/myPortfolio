@@ -2,47 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* "Signal Light" — the light counterpart to Signal Dark below. White/slate-50
+       surfaces, slate-900 text, emerald-700 accent (deepened from the dark theme's
+       emerald-500 so it still clears WCAG AA on a white background). */
+    --background: 210 40% 98%;
+    --foreground: 222.2 47.4% 11.2%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --primary: 162.9 93.5% 24.3%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 215.3 25% 26.7%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 162.9 93.5% 24.3%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 161.4 93.5% 30.4%;
+    --chart-1: 162.9 93.5% 24.3%;
+    --chart-2: 198.4 93.2% 45%;
+    --chart-3: 30 80% 45%;
+    --chart-4: 280 65% 50%;
+    --chart-5: 340 75% 45%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* "Signal Dark" — deep slate + emerald "signal green" accent. A developer-tool /
+       terminal-inspired palette: the accent reads as oscilloscope trace / build-passing
+       green, distinct from generic hardware-orange, matched to a firmware engineer's
+       actual working environment (IDEs, serial monitors, CI status). */
+    --background: 228.6 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 220 48.8% 8.4%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 47.4% 11.2%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 160.1 84.1% 39.4%;
+    --primary-foreground: 228.6 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 212.7 26.8% 83.9%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 160.1 84.1% 39.4%;
+    --accent-foreground: 228.6 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215.3 25% 26.7%;
+    --input: 215.3 25% 26.7%;
+    --ring: 158.1 64.4% 51.6%;
+    --chart-1: 160.1 84.1% 39.4%;
+    --chart-2: 198.4 93.2% 59.6%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
 
@@ -56,24 +77,28 @@
 }
 
 @layer utilities {
+  .font-mono-tech {
+    font-family: var(--font-jetbrains-mono), monospace;
+  }
+
   .animate-fade-in {
     @apply animate-in fade-in duration-1000;
   }
-  
+
   .animate-slide-up {
     @apply animate-in slide-in-from-bottom-4 duration-1000 fill-mode-both;
   }
-  
+
   .animate-slide-up:nth-child(1) { animation-delay: 0.1s; }
   .animate-slide-up:nth-child(2) { animation-delay: 0.2s; }
   .animate-slide-up:nth-child(3) { animation-delay: 0.3s; }
   .animate-slide-up:nth-child(4) { animation-delay: 0.4s; }
   .animate-slide-up:nth-child(5) { animation-delay: 0.5s; }
-  
+
   .animate-spin-slow {
-    animation: spin 8s linear infinite;
+    animation: spin-slow 20s linear infinite;
   }
-  
+
   .animate-blink {
     animation: blink 1s infinite;
   }
@@ -90,16 +115,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a2332;
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f97316;
+  background: #10b981;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ea580c;
+  background: #059669;
 }
 
 /* Smooth scroll behavior */
@@ -107,28 +132,53 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Respect reduced-motion preference: neutralize decorative animations/transitions
+   site-wide instead of leaving users who opt out of motion with dozens of
+   still-active keyframe loops and slide/fade-ins. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Progress bar custom styling */
 .progress-bar {
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Custom background patterns */
+/* Ambient dot-grid background — reads as PCB/oscilloscope grid without being literal */
+.bg-grid {
+  background-image:
+    radial-gradient(circle, rgba(148, 163, 184, 0.15) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
 .bg-pattern {
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(249, 115, 22, 0.05) 0%, transparent 50%);
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
 }
 
-/* Glassmorphism effect */
+/* Glassmorphism surface — theme-aware: uses --card/--foreground so it reads as
+   dark-frosted in dark mode and white-frosted in light mode automatically. */
 .glass {
-  background: rgba(26, 35, 50, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: hsl(var(--card) / 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--foreground) / 0.08);
 }
 
-/* Gradient text */
+/* Gradient text — signal green into data-cyan */
 .gradient-text {
-  background: linear-gradient(135deg, #f97316, #ea580c);
+  background: linear-gradient(135deg, #10b981, #38bdf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -136,26 +186,46 @@ html {
 
 /* Hover glow effect */
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.25);
 }
 
-/* Custom animations */
+/* Ambient blurred blobs for hero/section backgrounds */
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.08); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.animate-blob {
+  animation: blob-drift 14s ease-in-out infinite;
+}
+
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
-@keyframes pulse-orange {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
 }
 
-.animate-pulse-orange {
-  animation: pulse-orange 2s infinite;
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
 }
 
 /* Typography improvements */
@@ -170,10 +240,10 @@ html {
 
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
 
-/* Button animations */
+/* Button shimmer animation */
 .btn-animate {
   position: relative;
   overflow: hidden;
@@ -196,9 +266,9 @@ html {
 
 /* Loading spinner */
 .spinner {
-  border: 2px solid rgba(249, 115, 22, 0.3);
+  border: 2px solid rgba(16, 185, 129, 0.3);
   border-radius: 50%;
-  border-top: 2px solid #f97316;
+  border-top: 2px solid #10b981;
   width: 20px;
   height: 20px;
   animation: spin 1s linear infinite;
@@ -209,24 +279,9 @@ html {
   100% { transform: rotate(360deg); }
 }
 
-/* Hardware-themed animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-10px) rotate(1deg); }
-  66% { transform: translateY(-5px) rotate(-1deg); }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes pulse-slow {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.8; }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 3s ease-in-out infinite;
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes slide-in-left {
@@ -268,17 +323,17 @@ html {
 }
 
 .animate-slide-in-left {
-  animation: slide-in-left 0.8s ease-out forwards;
+  animation: slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
 }
 
 .animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out forwards;
+  animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
 }
 
 .animate-slide-in-up {
-  animation: slide-in-up 0.6s ease-out forwards;
+  animation: slide-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
 }
 
@@ -287,67 +342,58 @@ html {
   opacity: 0;
 }
 
-/* Hardware circuit animations */
-@keyframes circuit-glow {
-  0%, 100% { 
-    box-shadow: 0 0 5px rgba(249, 115, 22, 0.3);
-    border-color: rgba(249, 115, 22, 0.3);
+/* Scroll-triggered reveal — paired with the useReveal hook (components/hooks/use-reveal.ts).
+   Starts hidden/offset; JS adds .in-view once the element crosses the viewport threshold. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
-  50% { 
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
-    border-color: rgba(249, 115, 22, 0.8);
+}
+
+/* Signal glow — replaces the old circuit-glow, same idea (pulsing accent border) in green */
+@keyframes signal-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+    border-color: rgba(16, 185, 129, 0.8);
   }
 }
 
-.animate-circuit-glow {
-  animation: circuit-glow 2s ease-in-out infinite;
-}
-
-@keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
+.animate-signal-glow {
+  animation: signal-glow 2s ease-in-out infinite;
 }
 
 /* Form focus states */
 .form-input:focus {
   outline: none;
-  border-color: #f97316;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
 }
 
-/* Enhanced button animations */
-.btn-animate {
+/* Signal-themed progress bars */
+.progress-bar-signal {
+  background: linear-gradient(90deg, #10b981, #34d399);
   position: relative;
   overflow: hidden;
 }
 
-.btn-animate::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.btn-animate:hover::before {
-  left: 100%;
-}
-
-/* Hardware-themed progress bars */
-.progress-bar-hardware {
-  background: linear-gradient(90deg, #f97316, #ea580c);
-  position: relative;
-  overflow: hidden;
-}
-
-.progress-bar-hardware::after {
+.progress-bar-signal::after {
   content: '';
   position: absolute;
   top: 0;
