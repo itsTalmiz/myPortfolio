@@ -249,6 +249,21 @@ const projects = [
 
 export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+
+  const categories = [
+    'All',
+    'Embedded Systems',
+    'Robotics',
+    'Digital Design',
+    'IoT',
+    'Networking',
+    'Power Electronics',
+  ];
+
+  const filteredProjects = activeCategory === 'All'
+    ? projects
+    : projects.filter((p) => p.category === activeCategory);
 
   return (
     <section id="projects" className="py-24 bg-background relative overflow-hidden">
@@ -257,20 +272,39 @@ export function ProjectsSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal>
-          <div className="mb-16 text-center">
+          <div className="mb-12 text-center">
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Projects
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-sky-400 rounded-full mx-auto mb-6" />
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
               Hardware, embedded systems, robotics, and coursework spanning firmware, PCB design, and digital systems.
             </p>
+
+            {/* Category Filter Pills */}
+            <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+              {categories.map((cat) => (
+                <Button
+                  key={cat}
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setActiveCategory(cat)}
+                  className={`rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all duration-300 ${
+                    activeCategory === cat
+                      ? 'bg-emerald-500 text-background border-emerald-500 font-semibold shadow-md scale-105'
+                      : 'glass border-foreground/[0.1] text-muted-foreground hover:text-foreground hover:border-emerald-500/40'
+                  }`}
+                >
+                  {cat}
+                </Button>
+              ))}
+            </div>
           </div>
         </Reveal>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <Reveal key={project.id} delay={(index % 6) * 80}>
               <Card
                 className="glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-500 hover:-translate-y-1 cursor-pointer group overflow-hidden h-full flex flex-col"
