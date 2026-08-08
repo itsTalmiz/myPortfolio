@@ -1,5 +1,7 @@
 import { ImageResponse } from 'next/server';
 
+export const runtime = 'edge';
+
 export const alt = 'M. Talmiz Ur Rehman — Senior Hardware Design Engineer (Firmware)';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
