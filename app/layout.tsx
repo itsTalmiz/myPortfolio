@@ -52,6 +52,34 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 };
 
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'M. Talmiz Ur Rehman',
+  jobTitle: 'Senior Hardware Design Engineer (Firmware)',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'AIO APP Inc',
+  },
+  url: 'https://itstalmiz.vercel.app',
+  sameAs: [
+    'https://www.linkedin.com/in/itstalmiz/',
+    'https://github.com/itstalmiz',
+  ],
+  alumniOf: {
+    '@type': 'EducationalOrganization',
+    name: 'COMSATS University Islamabad',
+  },
+  knowsAbout: [
+    'Qualcomm QCM6125',
+    'Firmware Engineering',
+    'AOSP / Android BSP',
+    'Embedded Linux',
+    'PCB Design (Altium)',
+    'RTOS',
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -59,6 +87,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           {children}
