@@ -13,8 +13,19 @@ import {
   FileCode,
   Binary,
   ArrowUpRight,
+  Download,
+  ExternalLink,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { PdfViewer } from '@/components/PdfViewer';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const roles = [
@@ -40,6 +51,7 @@ export function HeroSection() {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [typeSpeed, setTypeSpeed] = useState(150);
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   useEffect(() => {
     const handleTyping = () => {
@@ -128,16 +140,15 @@ export function HeroSection() {
                 </Button>
               </Link>
 
-              <Link href="/Resume_MTalmizUrRehman__General.pdf" target="_blank" rel="noopener noreferrer" passHref>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="glass border-foreground/[0.08] text-foreground/90 hover:text-emerald-400 hover:border-emerald-500/40 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-                >
-                  <FileText className="w-4 h-4 mr-2" />
-                  My resume
-                </Button>
-              </Link>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => setIsResumeOpen(true)}
+                className="glass border-foreground/[0.08] text-foreground/90 hover:text-emerald-400 hover:border-emerald-500/40 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              >
+                <FileText className="w-4 h-4 mr-2" />
+                My resume
+              </Button>
             </div>
 
             {/* Technologies Grid */}
@@ -164,10 +175,12 @@ export function HeroSection() {
                 {/* Glass frame */}
                 <div className="relative w-full h-full rounded-[2rem] glass border-foreground/[0.08] p-2 shadow-2xl">
                   <div className="relative w-full h-full rounded-[1.6rem] overflow-hidden">
-                    <img
+                    <Image
                       src="/talmiz.jpeg"
-                      alt="Talmiz"
-                      className="w-full h-full object-cover grayscale-[55%] contrast-[1.05] saturate-75 transition-transform duration-700 hover:scale-105"
+                      alt="Talmiz ur Rehman"
+                      fill
+                      priority
+                      className="object-cover grayscale-[55%] contrast-[1.05] saturate-75 transition-transform duration-700 hover:scale-105"
                     />
                     {/* Color-match overlay: pulls the photo's warm background toward the
                         site's slate/emerald palette instead of clashing with it */}
@@ -209,6 +222,153 @@ export function HeroSection() {
           </div>
         </Button>
       </div>
+
+      {/* Resume Modal */}
+      <Dialog open={isResumeOpen} onOpenChange={setIsResumeOpen}>
+        <DialogContent className="max-w-4xl w-[95vw] h-[90vh] glass border-foreground/[0.08] text-foreground flex flex-col p-4 sm:p-6 overflow-hidden">
+          <DialogHeader className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-foreground/[0.08] gap-3">
+            <div>
+              <DialogTitle className="text-xl font-bold text-foreground flex items-center gap-2">
+                <FileText className="w-5 h-5 text-emerald-400" />
+                Resume — M. Talmiz Ur Rehman
+              </DialogTitle>
+              <DialogDescription className="text-muted-foreground text-xs sm:text-sm">
+                Senior Hardware Design Engineer (Firmware) · Islamabad, Pakistan
+              </DialogDescription>
+            </div>
+            <div className="flex items-center gap-2 shrink-0">
+              <a
+                href="/Resume_MTalmizUrRehman__General.pdf"
+                download="Resume_MTalmizUrRehman.pdf"
+              >
+                <Button size="sm" className="bg-emerald-500 hover:bg-emerald-400 text-background text-xs font-semibold shadow-md transition-all">
+                  <Download className="w-3.5 h-3.5 mr-1.5" />
+                  Download PDF
+                </Button>
+              </a>
+              <a
+                href="/Resume_MTalmizUrRehman__General.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="sm" className="glass text-xs border-foreground/10 hover:border-emerald-500/40">
+                  <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
+                  Open in New Tab
+                </Button>
+              </a>
+            </div>
+          </DialogHeader>
+
+          {/* Scrollable Rich Resume Document View */}
+          <div className="flex-1 overflow-y-auto pr-2 space-y-6 text-sm text-foreground/90 mt-4 leading-relaxed font-sans">
+            {/* Header / Contacts Card */}
+            <div className="p-4 rounded-xl glass border-foreground/[0.06] bg-foreground/[0.02]">
+              <p className="text-xs sm:text-sm text-muted-foreground flex flex-wrap gap-x-5 gap-y-1.5 font-mono-tech">
+                <span>📧 mtalmiz1234@gmail.com</span>
+                <span>📞 +92 336 5267868</span>
+                <span>🔗 linkedin.com/in/itstalmiz</span>
+                <span>🌐 itstalmiz.vercel.app</span>
+              </p>
+            </div>
+
+            {/* Summary */}
+            <div>
+              <h3 className="text-sm font-bold text-emerald-400 font-mono-tech mb-2">// SUMMARY</h3>
+              <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm bg-foreground/[0.02] p-4 rounded-xl border border-foreground/[0.05]">
+                Embedded firmware and hardware engineer with 3 years across the full product lifecycle — firmware and BSP bring-up, PCB design, hardware integration, and mass production. Hands-on with ARM-based Qualcomm QCM6125 / Quectel SOM platforms, Android (AOSP), OTA, and high-speed multilayer PCB design in Altium.
+              </p>
+            </div>
+
+            {/* Technical Skills */}
+            <div>
+              <h3 className="text-sm font-bold text-emerald-400 font-mono-tech mb-3">// TECHNICAL SKILLS</h3>
+              <div className="grid sm:grid-cols-2 gap-3 text-xs">
+                <div className="p-3 rounded-lg glass border-foreground/[0.06]">
+                  <span className="font-semibold text-foreground block mb-1">Languages:</span>
+                  <span className="text-muted-foreground">C, C++, Python, Embedded C, Bash/Shell, ARM Assembly, Verilog</span>
+                </div>
+                <div className="p-3 rounded-lg glass border-foreground/[0.06]">
+                  <span className="font-semibold text-foreground block mb-1">Firmware & OS:</span>
+                  <span className="text-muted-foreground">Embedded Linux, AOSP/Android, BSP & device drivers, Kernel, OTA (Full/Incremental), RTOS, Perfetto</span>
+                </div>
+                <div className="p-3 rounded-lg glass border-foreground/[0.06]">
+                  <span className="font-semibold text-foreground block mb-1">Hardware & PCB:</span>
+                  <span className="text-muted-foreground">Altium Designer, EasyEDA, High-speed flex & multilayer PCB design, EMI control, Signal integrity</span>
+                </div>
+                <div className="p-3 rounded-lg glass border-foreground/[0.06]">
+                  <span className="font-semibold text-foreground block mb-1">Platforms & Protocols:</span>
+                  <span className="text-muted-foreground">Qualcomm QCM6125, Quectel SC668S SOM, ARM; I2C, SPI, UART</span>
+                </div>
+                <div className="p-3 rounded-lg glass border-foreground/[0.06]">
+                  <span className="font-semibold text-foreground block mb-1">Production & QC:</span>
+                  <span className="text-muted-foreground">SMT oversight (reflow, X-ray, AOI, BGA dye test), GMS key flashing/provisioning, FCC compliance (EMI/EMC, ESD, OTA)</span>
+                </div>
+                <div className="p-3 rounded-lg glass border-foreground/[0.06]">
+                  <span className="font-semibold text-foreground block mb-1">Debug & Tools:</span>
+                  <span className="text-muted-foreground">Git, GDB, Oscilloscope, Logic Analyzer, QNavigator / QFlash / QPST, Proteus, MATLAB</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Experience */}
+            <div>
+              <h3 className="text-sm font-bold text-emerald-400 font-mono-tech mb-3">// EXPERIENCE</h3>
+              <div className="space-y-4">
+                <div className="p-4 rounded-xl glass border-foreground/[0.06]">
+                  <div className="flex justify-between items-start mb-1 flex-wrap">
+                    <h4 className="font-bold text-foreground">Senior Hardware Design Engineer (Firmware)</h4>
+                    <span className="text-xs text-emerald-400 font-mono-tech">11/2023 – Present</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-3">AIO APP Inc · Islamabad, Pakistan</p>
+                  <ul className="space-y-1.5 text-xs text-muted-foreground list-disc list-inside">
+                    <li>Spearheaded firmware development on ARM-based Qualcomm QCM6125 platform; performed Linux kernel/BSP and AOSP customization, device-driver integration, and board bring-up.</li>
+                    <li>Customized AOSP & implemented full/incremental OTA update delivery on QCM6125 devices.</li>
+                    <li>Integrated battery calibration and charging ICs supporting fast & reverse wireless charging with thermal cutoffs.</li>
+                    <li>Designed high-speed flex & multilayer PCBs with EMI control and signal integrity in Altium.</li>
+                  </ul>
+                </div>
+
+                <div className="p-4 rounded-xl glass border-foreground/[0.06]">
+                  <div className="flex justify-between items-start mb-1 flex-wrap">
+                    <h4 className="font-bold text-foreground">International Engineering Visits — China (4 Visits)</h4>
+                    <span className="text-xs text-emerald-400 font-mono-tech">2024 – 2025</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-3">AIO APP Inc · Shenzhen, China</p>
+                  <ul className="space-y-1.5 text-xs text-muted-foreground list-disc list-inside">
+                    <li>Progressed from device bring-up and peripheral optimization (display, touch, battery, speaker, MIC) to full-scale mass production.</li>
+                    <li>Led antenna tuning (2.4/5GHz), FCC compliance (EMI/EMC, ESD, OTA), USB, drop testing, and thermal profiling with 8-probe monitoring.</li>
+                    <li>Oversaw SMT (footprints, reflow, X-ray, AOI, BGA dye testing) and drove the production line with GMS key flashing and provisioning.</li>
+                  </ul>
+                </div>
+
+                <div className="p-4 rounded-xl glass border-foreground/[0.06]">
+                  <div className="flex justify-between items-start mb-1 flex-wrap">
+                    <h4 className="font-bold text-foreground">Hardware Design Engineer</h4>
+                    <span className="text-xs text-emerald-400 font-mono-tech">08/2023 – 11/2023</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-3">TeReSol Pvt. Ltd · Islamabad, Pakistan</p>
+                  <ul className="space-y-1.5 text-xs text-muted-foreground list-disc list-inside">
+                    <li>Embedded C/C++ development and Bash automation scripts; fixed critical bugs to deliver functional releases.</li>
+                    <li>Cloned and flashed customized NVIDIA Tegra GPU boards.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Education */}
+            <div>
+              <h3 className="text-sm font-bold text-emerald-400 font-mono-tech mb-3">// EDUCATION</h3>
+              <div className="p-4 rounded-xl glass border-foreground/[0.06] flex justify-between items-start flex-wrap gap-2">
+                <div>
+                  <h4 className="font-bold text-foreground">COMSATS University Islamabad</h4>
+                  <p className="text-xs text-muted-foreground">BS Electrical (Computer) Engineering — GPA: 3.31</p>
+                </div>
+                <span className="text-xs text-emerald-400 font-mono-tech">09/2019 – 09/2023</span>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
