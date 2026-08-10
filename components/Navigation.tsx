@@ -54,7 +54,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <button
             onClick={() => scrollToSection('#home')}
-            className="font-mono-tech text-emerald-400 font-semibold text-lg tracking-tight flex items-center gap-1.5 cursor-pointer"
+            className="font-mono-tech text-emerald-400 font-semibold text-lg tracking-tight flex items-center gap-1.5 cursor-pointer btn-tactile active:scale-95 transition-transform"
           >
             <span className="text-foreground/40">&lt;</span>
             Talmiz
@@ -68,9 +68,9 @@ export function Navigation() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 cursor-pointer ${
+                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 cursor-pointer btn-tactile ${
                     activeSection === item.href.substring(1)
-                      ? 'text-emerald-400 bg-emerald-500/10'
+                      ? 'text-emerald-400 bg-emerald-500/10 font-semibold shadow-sm'
                       : 'text-muted-foreground hover:text-foreground hover:bg-foreground/[0.04]'
                   }`}
                 >
@@ -88,7 +88,7 @@ export function Navigation() {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-muted-foreground hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground active:scale-95 transition-transform"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
@@ -104,9 +104,9 @@ export function Navigation() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 cursor-pointer ${
+                className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 cursor-pointer btn-tactile ${
                   activeSection === item.href.substring(1)
-                    ? 'text-emerald-400 bg-emerald-500/10'
+                    ? 'text-emerald-400 bg-emerald-500/10 font-semibold'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
@@ -119,3 +119,4 @@ export function Navigation() {
     </nav>
   );
 }
+

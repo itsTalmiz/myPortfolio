@@ -30,12 +30,12 @@ const stats = [
 ];
 
 const specializations = [
-  'ARM Cortex-M/A (QCM6125)',
+  'ARM Cortex (QCM6125)',
   'AOSP & BSP Customization',
-  'OTA Updates (Full/Incremental)',
-  'Power Management & Fast Charging',
-  'SMT & Mass Production',
-  'High-Speed Flex/Multilayer PCB',
+  'NFC PN7220 & LVDS LT9211D',
+  'Touch (I2C) & MIPI Camera',
+  'High-Speed Flex & Antenna Design',
+  'China Mass Prod & GMS Key Flashing',
 ];
 
 const CountUpAnimation = ({ end, duration = 2000, symbol = '' }: { end: number; duration?: number; symbol?: string }) => {

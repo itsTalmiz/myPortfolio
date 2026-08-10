@@ -33,13 +33,13 @@ import {
 const projects = [
   {
     id: 1,
-    title: "AI Device",
+    title: "AI Device (Confidential)",
     description:
       "Design and development of an interactive AI device",
     longDescription:
       "Developed system firmware on Quectel SOM, integrating display, touch, and camera modules for real‑time interaction. Implemented battery management, fast charging, reverse wireless charging logic, and designed high‑speed flex & multilayer PCBs with advanced signal integrity and EMI control.",
     image:
-      "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "/project/ai_device_ai.jpg",
     icon: Monitor,
     technologies: [
       "Quectel SC668S",
@@ -62,7 +62,7 @@ const projects = [
     longDescription:
       "Designed and built a robot capable of detecting, tracking, and aiming at moving targets. Integrated a Raspberry Pi 4 as the onboard computer with real‑time image processing for target tracking, provided live visual output over WiFi, and let the user select a target for the robot to aim at — demonstrating the potential of semi‑autonomous systems in security applications.",
     image:
-      "/project/SAOTR.png",
+      "/project/sentry_robot_ai.jpg",
     icon: Bot,
     technologies: [
       "Raspberry Pi 4",
@@ -101,7 +101,7 @@ const projects = [
     longDescription:
       "Engineered an Arduino‑based robot capable of line following, sumo battling, and obstacle avoidance. Designed interactive Sumo competition app and used a double‑layer PCB as the chassis.",
     image:
-      "/project/LFR.jpeg",
+      "/project/line_follower_ai.jpg",
     icon: GitBranch,
     technologies: [
       "Arduino",
@@ -124,7 +124,7 @@ const projects = [
     longDescription:
       "Solved a complex engineering problem in a Digital Image Processing course: enhancing vessel detection in retinal images and improving accuracy over raw segmented images. Implemented the Frangi2D filter to bring segmentation results significantly closer to ground truth, with a side‑by‑side comparison of segmented, enhanced, and ground‑truth images demonstrating the improvement.",
     image:
-      "/project/image_conv.jpeg",
+      "/project/retinal_vessel_ai.jpg",
     icon: Eye,
     technologies: ["MATLAB", "Digital Image Processing", "Frangi Filter", "Vessel Segmentation"],
     category: "Digital Image Processing",
@@ -289,10 +289,10 @@ export function ProjectsSection() {
                   variant="outline"
                   size="sm"
                   onClick={() => setActiveCategory(cat)}
-                  className={`rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all duration-300 ${
+                  className={`rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all duration-200 btn-tactile ${
                     activeCategory === cat
-                      ? 'bg-emerald-500 text-background border-emerald-500 font-semibold shadow-md scale-105'
-                      : 'glass border-foreground/[0.1] text-muted-foreground hover:text-foreground hover:border-emerald-500/40'
+                      ? 'bg-emerald-500 text-background border-emerald-500 font-semibold shadow-md scale-105 active:scale-95'
+                      : 'glass border-foreground/[0.1] text-muted-foreground hover:text-foreground hover:border-emerald-500/40 active:scale-95'
                   }`}
                 >
                   {cat}
@@ -304,28 +304,32 @@ export function ProjectsSection() {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
-            <Reveal key={project.id} delay={(index % 6) * 80}>
-              <Card
-                className="glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-500 hover:-translate-y-1 cursor-pointer group overflow-hidden h-full flex flex-col"
-                onClick={() => setSelectedProject(project)}
-              >
-                <div className="relative overflow-hidden">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
-                    />
-                  ) : project.art ? (
-                    <div className="w-full h-48 bg-gradient-to-br from-emerald-500/[0.05] to-sky-500/[0.05] transition-transform duration-700 group-hover:scale-105">
-                      <project.art />
-                    </div>
-                  ) : (
-                    <div className="w-full h-48 flex items-center justify-center bg-gradient-to-br from-emerald-500/[0.08] to-sky-500/[0.08]">
-                      <project.icon className="w-14 h-14 text-emerald-400/50" />
-                    </div>
-                  )}
+          {filteredProjects.map((project, index) => {
+            const isFeatured = project.id === 1 && activeCategory === 'All';
+            return (
+              <Reveal key={project.id} delay={(index % 6) * 80} className={isFeatured ? 'md:col-span-2 lg:col-span-2' : ''}>
+                <Card
+                  className={`glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-300 hover:-translate-y-1.5 active:scale-[0.98] cursor-pointer group overflow-hidden h-full flex flex-col shadow-sm hover:shadow-xl ${
+                    isFeatured ? 'border-emerald-500/20 bg-gradient-to-br from-emerald-500/[0.04] to-sky-500/[0.02]' : ''
+                  }`}
+                  onClick={() => setSelectedProject(project)}
+                >
+                  <div className="relative overflow-hidden">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className={`w-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110 ${isFeatured ? 'h-64 sm:h-72' : 'h-48'}`}
+                      />
+                    ) : project.art ? (
+                      <div className={`w-full bg-gradient-to-br from-emerald-500/[0.05] to-sky-500/[0.05] transition-transform duration-700 group-hover:scale-105 ${isFeatured ? 'h-64 sm:h-72' : 'h-48'}`}>
+                        <project.art />
+                      </div>
+                    ) : (
+                      <div className={`w-full flex items-center justify-center bg-gradient-to-br from-emerald-500/[0.08] to-sky-500/[0.08] ${isFeatured ? 'h-64 sm:h-72' : 'h-48'}`}>
+                        <project.icon className="w-14 h-14 text-emerald-400/50" />
+                      </div>
+                    )}
 
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90" />
 
@@ -387,7 +391,8 @@ export function ProjectsSection() {
                 </CardContent>
               </Card>
             </Reveal>
-          ))}
+          );
+        })}
         </div>
 
         {/* Project Detail Modal */}

@@ -25,42 +25,56 @@ import {
   Radio,
   MessageSquare,
   CircuitBoard,
+  Code,
+  Cpu,
+  Timer,
+  Terminal,
+  Wrench,
+  Zap,
+  GitBranch,
+  Box,
+  Binary,
+  Flame,
+  FileCode,
+  Gauge,
+  Sliders,
+  RadioTower,
   type LucideIcon,
 } from 'lucide-react';
 
 const skillCategories = {
   embedded: [
-    { name: 'C/C++ Programming', logo: '/logos/cpp.png' },
-    { name: 'ARM Cortex MCUs', logo: '/logos/arm.png' },
-    { name: 'FreeRTOS', logo: '/logos/freertos.png' },
-    { name: 'Device Drivers', logo: '/logos/drivers.png' },
-    { name: 'Bootloader Dev', logo: '/logos/bootloader.png' },
-    { name: 'Debugging', logo: '/logos/debug.png' },
-    { name: 'Embedded Linux', logo: '/logos/linux.png' },
-    { name: 'IoT Dev', logo: '/logos/iot.png' },
+    { name: 'C/C++ Programming', icon: Code },
+    { name: 'ARM Cortex MCUs', icon: Cpu },
+    { name: 'FreeRTOS', icon: Timer },
+    { name: 'Device Drivers', icon: Terminal },
+    { name: 'Bootloader Dev', icon: Binary },
+    { name: 'Debugging & Probing', icon: Bug },
+    { name: 'Embedded Linux', icon: Layers },
+    { name: 'IoT Development', icon: RadioTower },
     { name: 'AOSP / Android', icon: Smartphone },
     { name: 'BSP & Kernel', icon: Layers },
     { name: 'OTA Updates', icon: RefreshCw },
   ],
   hardware: [
-    { name: 'PCB Design', logo: '/logos/PCB.png' },
-    { name: 'Circuit Analysis', logo: '/logos/circuit.png' },
-    { name: 'Component Selection', logo: '/logos/components.png' },
-    { name: 'Signal Integrity', logo: '/logos/signal.png' },
-    { name: 'Power Electronics', logo: '/logos/power.png' },
-    { name: 'EMC/EMI Design', logo: '/logos/emc.png' },
-    { name: 'Schematic Capture', logo: '/logos/schematic.png' },
-    { name: 'DFM/DFT', logo: '/logos/dfm.png' },
+    { name: 'PCB Design', icon: CircuitBoard },
+    { name: 'Circuit Analysis', icon: Activity },
+    { name: 'Component Selection', icon: Box },
+    { name: 'Signal Integrity', icon: Waves },
+    { name: 'Power Electronics', icon: Zap },
+    { name: 'EMC/EMI Design', icon: ShieldCheck },
+    { name: 'Schematic Capture', icon: FileCode },
+    { name: 'DFM / DFT', icon: Factory },
   ],
   tools: [
-    { name: 'Altium Designer', logo: '/logos/altium.png' },
-    { name: 'EasyEDA', logo: '/logos/EasyEDA.png' },
-    { name: 'MATLAB/Simulink', logo: '/logos/matlab.png' },
-    { name: 'LabVIEW', logo: '/logos/labview.png' },
-    { name: 'Proteus', logo: '/logos/proteus.png' },
-    { name: 'Xillinx', logo: '/logos/xilinx.png' },
-    { name: 'Git/GitHub', logo: '/logos/git.png' },
-    { name: 'Docker', logo: '/logos/docker.png' },
+    { name: 'Altium Designer', icon: CircuitBoard },
+    { name: 'EasyEDA', icon: FileCode },
+    { name: 'MATLAB / Simulink', icon: Gauge },
+    { name: 'LabVIEW', icon: Sliders },
+    { name: 'Proteus', icon: Cpu },
+    { name: 'Xilinx FPGA', icon: Binary },
+    { name: 'Git / GitHub', icon: GitBranch },
+    { name: 'Docker', icon: Box },
     { name: 'GDB', icon: Bug },
     { name: 'Oscilloscope', icon: Activity },
     { name: 'Logic Analyzer', icon: Waves },
@@ -68,20 +82,20 @@ const skillCategories = {
   ],
   production: [
     { name: 'SMT Oversight', icon: Factory },
-    { name: 'GMS Key Flashing/Provisioning', icon: KeyRound },
-    { name: 'FCC Compliance (EMI/EMC, ESD, OTA)', icon: ShieldCheck },
+    { name: 'GMS Key Provisioning', icon: KeyRound },
+    { name: 'FCC Compliance (EMI/EMC)', icon: ShieldCheck },
     { name: 'Validation & Burn-in', icon: CheckCircle2 },
-    { name: 'Mentoring Engineers', icon: Users },
+    { name: 'Engineering Mentorship', icon: Users },
   ],
   protocols: [
-    { name: 'I2C/SPI/UART', icon: Cable },
-    { name: 'CAN/CAN-FD', icon: Route },
-    { name: 'Ethernet/TCP-IP', icon: Network },
-    { name: 'USB 2.0/3.0', icon: Usb },
-    { name: 'WiFi/Bluetooth', icon: Wifi },
-    { name: 'LoRaWAN/Zigbee', icon: Radio },
-    { name: 'MQTT/CoAP', icon: MessageSquare },
-    { name: 'Modbus/RS485', icon: CircuitBoard },
+    { name: 'I2C / SPI / UART', icon: Cable },
+    { name: 'CAN / CAN-FD', icon: Route },
+    { name: 'Ethernet / TCP-IP', icon: Network },
+    { name: 'USB 2.0 / 3.0', icon: Usb },
+    { name: 'WiFi / Bluetooth', icon: Wifi },
+    { name: 'LoRaWAN / Zigbee', icon: Radio },
+    { name: 'MQTT / CoAP', icon: MessageSquare },
+    { name: 'Modbus / RS485', icon: CircuitBoard },
   ],
 };
 
@@ -93,8 +107,8 @@ interface SkillLogoProps {
 
 function SkillLogo({ name, logo, icon: Icon }: SkillLogoProps) {
   return (
-    <div className="group flex flex-col items-center space-y-2">
-      <div className="w-16 h-16 glass border-foreground/[0.06] rounded-xl flex items-center justify-center shadow-md group-hover:border-emerald-500/30 group-hover:scale-105 transition-all duration-300">
+    <div className="group flex flex-col items-center space-y-2 cursor-pointer btn-tactile">
+      <div className="w-16 h-16 glass border-foreground/[0.06] rounded-xl flex items-center justify-center shadow-md group-hover:border-emerald-500/30 group-hover:scale-105 active:scale-95 transition-all duration-200">
         {logo ? (
           <Image
             src={logo}
@@ -104,10 +118,10 @@ function SkillLogo({ name, logo, icon: Icon }: SkillLogoProps) {
             className="object-contain"
           />
         ) : Icon ? (
-          <Icon className="w-6 h-6 text-emerald-400" />
+          <Icon className="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform duration-200" />
         ) : null}
       </div>
-      <span className="text-muted-foreground text-sm font-medium text-center group-hover:text-foreground/80 transition-colors">{name}</span>
+      <span className="text-muted-foreground text-sm font-medium text-center group-hover:text-foreground transition-colors">{name}</span>
     </div>
   );
 }
@@ -141,7 +155,7 @@ export function SkillsSection() {
                 <TabsTrigger
                   key={value}
                   value={value}
-                  className="data-[state=active]:bg-emerald-500 data-[state=active]:text-background text-muted-foreground rounded-md transition-all duration-300"
+                  className="data-[state=active]:bg-emerald-500 data-[state=active]:text-background text-muted-foreground rounded-md transition-all duration-200 btn-tactile active:scale-95 font-medium"
                 >
                   {tabLabels[value]}
                 </TabsTrigger>

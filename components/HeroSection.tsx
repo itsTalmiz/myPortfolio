@@ -15,6 +15,7 @@ import {
   ArrowUpRight,
   Download,
   ExternalLink,
+  Activity,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -81,6 +82,43 @@ export function HeroSection() {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const [terminalMode, setTerminalMode] = useState<'bsp' | 'aosp' | 'pcb' | 'china'>('bsp');
+  const [copiedLog, setCopiedLog] = useState(false);
+
+  const logsByMode = {
+    bsp: [
+      '[0.012s] QCM6125 Kernel & BSP board bring-up: OK',
+      '[0.024s] LVDS LT9211D bridge & MIPI DSI display initialized',
+      '[0.038s] Touch controller on I2C & MIPI Camera brought up',
+      '[0.052s] NFC PN7220 driver integrated & peripheral test PASSED',
+    ],
+    aosp: [
+      '[0.015s] AOSP Customization & system service integration',
+      '[0.030s] OTA update engine registered (Full & Incremental)',
+      '[0.048s] GMS key store provisioned & flashed successfully',
+      '[0.065s] Rockchip & Qualcomm peripheral bridge operational',
+    ],
+    pcb: [
+      '[0.010s] High-speed flex & multilayer PCB design',
+      '[0.025s] 90Ω differential pair signal integrity verified',
+      '[0.042s] EMI/EMC ground plane shielding & trace routing verified',
+      '[0.060s] Antenna design & RF tuning (2.4GHz / 5GHz) active',
+    ],
+    china: [
+      '[0.018s] China Mass Prod: PCB testing & validation OK',
+      '[0.035s] Assembly line movement & SMT reflow profile OK',
+      '[0.050s] Secure GMS key flashing, provisioning & firmware deployment',
+      '[0.072s] Functional testing, aging & burn-in before packing PASS',
+    ],
+  };
+
+  const copyLogText = () => {
+    const text = logsByMode[terminalMode].join('\n');
+    navigator.clipboard.writeText(text);
+    setCopiedLog(true);
+    setTimeout(() => setCopiedLog(false), 2000);
+  };
+
   return (
     <section id="home" className="min-h-screen bg-background relative overflow-hidden">
       {/* Ambient dot-grid */}
@@ -90,8 +128,8 @@ export function HeroSection() {
       <div className="absolute top-0 left-1/4 w-[32rem] h-[32rem] bg-emerald-500/10 rounded-full blur-[120px] animate-blob" />
       <div className="absolute bottom-0 right-1/4 w-[28rem] h-[28rem] bg-sky-500/10 rounded-full blur-[120px] animate-blob" style={{ animationDelay: '4s' }} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center pt-24 pb-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-center pt-24 pb-16 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center w-full mb-12">
           {/* Left Content */}
           <div className="space-y-8 animate-slide-in-left">
             <div className="space-y-5">
@@ -116,7 +154,7 @@ export function HeroSection() {
                 </h2>
               </div>
 
-              <p className="text-muted-foreground text-lg max-w-lg">
+              <p className="text-muted-foreground text-lg max-w-lg leading-relaxed">
                 I design and ship firmware for ARM-based Qualcomm platforms — from board bring-up
                 and BSP customization to AOSP, OTA delivery, and the PCBs underneath it all.
               </p>
@@ -131,7 +169,7 @@ export function HeroSection() {
               >
                 <Button
                   size="lg"
-                  className="bg-emerald-500 hover:bg-emerald-400 text-background px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-glow btn-animate relative overflow-hidden group w-full sm:w-auto"
+                  className="bg-emerald-500 hover:bg-emerald-400 text-background px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] hover:shadow-glow btn-animate relative overflow-hidden group w-full sm:w-auto"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     Got a project?
@@ -144,7 +182,7 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 onClick={() => setIsResumeOpen(true)}
-                className="glass border-foreground/[0.08] text-foreground/90 hover:text-emerald-400 hover:border-emerald-500/40 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+                className="glass border-foreground/[0.08] text-foreground/90 hover:text-emerald-400 hover:border-emerald-500/40 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] w-full sm:w-auto"
               >
                 <FileText className="w-4 h-4 mr-2" />
                 My resume
@@ -152,14 +190,14 @@ export function HeroSection() {
             </div>
 
             {/* Technologies Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
               {technologies.map((tech, index) => (
                 <div
                   key={index}
-                  className="group text-center p-3 rounded-xl glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-300 hover:scale-105 hover:bg-emerald-500/[0.06]"
+                  className="group text-center p-3 rounded-xl glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-300 hover:scale-[1.04] active:scale-[0.97] hover:bg-emerald-500/[0.06] cursor-pointer"
                 >
-                  <tech.icon className="w-5 h-5 mx-auto mb-2 text-emerald-400 group-hover:animate-pulse" />
-                  <span className="text-muted-foreground text-[11px] font-medium group-hover:text-emerald-300 transition-colors leading-tight">{tech.name}</span>
+                  <tech.icon className="w-5 h-5 mx-auto mb-2 text-emerald-400 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="text-muted-foreground text-[11px] font-medium group-hover:text-emerald-300 transition-colors leading-tight block">{tech.name}</span>
                 </div>
               ))}
             </div>
@@ -182,8 +220,7 @@ export function HeroSection() {
                       priority
                       className="object-cover grayscale-[55%] contrast-[1.05] saturate-75 transition-transform duration-700 hover:scale-105"
                     />
-                    {/* Color-match overlay: pulls the photo's warm background toward the
-                        site's slate/emerald palette instead of clashing with it */}
+                    {/* Color-match overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-transparent to-emerald-500/25 mix-blend-multiply" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                   </div>
@@ -203,6 +240,120 @@ export function HeroSection() {
                 <div className="absolute -top-4 -right-4 glass border-foreground/[0.08] rounded-full px-3 py-1.5 shadow-xl animate-float" style={{ animationDelay: '1.5s' }}>
                   <span className="font-mono-tech text-xs text-emerald-400">3+ yrs</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Interactive Hardware Diagnostic Terminal & Oscilloscope Simulation Widget */}
+        <div className="w-full glass border-foreground/[0.08] rounded-2xl p-4 sm:p-6 shadow-2xl animate-fade-in">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-foreground/[0.08]">
+            <div className="flex items-center gap-3">
+              <div className="flex space-x-1.5">
+                <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
+              </div>
+              <span className="font-mono-tech text-xs sm:text-sm text-foreground/90 font-semibold flex items-center gap-2">
+                <CircuitBoard className="w-4 h-4 text-emerald-400" />
+                hardware_diagnostic.ttyUSB0
+              </span>
+            </div>
+
+            {/* Mode selection buttons */}
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                onClick={() => setTerminalMode('bsp')}
+                className={`px-3 py-1 text-xs font-mono-tech rounded-lg transition-all btn-tactile ${
+                  terminalMode === 'bsp'
+                    ? 'bg-emerald-500 text-background font-bold shadow-sm'
+                    : 'glass text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                [BSP Bringup]
+              </button>
+              <button
+                onClick={() => setTerminalMode('aosp')}
+                className={`px-3 py-1 text-xs font-mono-tech rounded-lg transition-all btn-tactile ${
+                  terminalMode === 'aosp'
+                    ? 'bg-emerald-500 text-background font-bold shadow-sm'
+                    : 'glass text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                [AOSP & OTA]
+              </button>
+              <button
+                onClick={() => setTerminalMode('pcb')}
+                className={`px-3 py-1 text-xs font-mono-tech rounded-lg transition-all btn-tactile ${
+                  terminalMode === 'pcb'
+                    ? 'bg-emerald-500 text-background font-bold shadow-sm'
+                    : 'glass text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                [PCB Design]
+              </button>
+              <button
+                onClick={() => setTerminalMode('china')}
+                className={`px-3 py-1 text-xs font-mono-tech rounded-lg transition-all btn-tactile ${
+                  terminalMode === 'china'
+                    ? 'bg-emerald-500 text-background font-bold shadow-sm'
+                    : 'glass text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                [China Mass-Prod]
+              </button>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6 pt-4 items-center">
+            {/* Oscilloscope Waveform Graphic */}
+            <div className="p-4 rounded-xl glass border-foreground/[0.06] bg-foreground/[0.02]">
+              <div className="flex justify-between items-center mb-2 font-mono-tech text-[11px]">
+                <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
+                  <Activity className="w-3.5 h-3.5 animate-pulse text-emerald-400" />
+                  CH1: SPI/PWM WAVEFORM
+                </span>
+                <span className="text-muted-foreground">500mV/div 10us</span>
+              </div>
+              <div className="h-20 w-full relative flex items-center overflow-hidden">
+                <svg className="w-full h-full" viewBox="0 0 300 60" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="waveGrad" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#10b981" stopOpacity="0.2" />
+                      <stop offset="50%" stopColor="#10b981" stopOpacity="1" />
+                      <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.8" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M 0 30 L 25 30 L 25 10 L 60 10 L 60 50 L 95 50 L 95 10 L 130 10 L 130 50 L 165 50 L 165 10 L 200 10 L 200 50 L 235 50 L 235 10 L 270 10 L 270 30 L 300 30"
+                    fill="none"
+                    stroke="url(#waveGrad)"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            {/* Simulated Live Serial Terminal Stream */}
+            <div className="lg:col-span-2 p-4 rounded-xl glass border-foreground/[0.06] bg-black/40 font-mono-tech text-xs space-y-2 relative overflow-hidden">
+              <div className="flex justify-between items-center text-[10px] text-muted-foreground border-b border-white/10 pb-1.5">
+                <span>SERIAL LOG (115200 BAUD)</span>
+                <button
+                  onClick={copyLogText}
+                  className="text-emerald-400 hover:text-emerald-300 transition-colors cursor-pointer"
+                >
+                  {copiedLog ? 'Copied!' : 'Copy output'}
+                </button>
+              </div>
+              <div className="space-y-1.5 pt-1 text-emerald-300/90">
+                {logsByMode[terminalMode].map((logLine, idx) => (
+                  <div key={idx} className="flex items-start gap-2">
+                    <span className="text-emerald-500 font-bold select-none">&gt;</span>
+                    <span>{logLine}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
