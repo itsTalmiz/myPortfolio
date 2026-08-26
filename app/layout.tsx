@@ -15,31 +15,73 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
+const siteUrl = 'https://itstalmiz.com';
+const siteTitle = 'Talmiz ur Rehman — Senior Hardware Design Engineer (Firmware)';
+const siteDescription =
+  'Portfolio of M. Talmiz Ur Rehman — Embedded firmware & hardware design engineer specializing in Qualcomm QCM6125 platforms, Linux/BSP & AOSP customization, and high-speed multilayer PCB design.';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://itstalmiz.vercel.app'),
-  title: 'Talmiz ur Rehman - Senior Hardware Design Engineer (Firmware)',
-  description: 'Portfolio of M. Talmiz Ur Rehman — embedded firmware & hardware engineer specializing in Qualcomm QCM6125, AOSP/Android, BSP, and high-speed PCB design.',
-  keywords: 'hardware engineer, embedded systems, firmware, AOSP, BSP, Qualcomm QCM6125, PCB design, embedded Linux',
-  authors: [{ name: 'M. Talmiz Ur Rehman' }],
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: '%s | M. Talmiz Ur Rehman',
+  },
+  description: siteDescription,
+  keywords: [
+    'M. Talmiz Ur Rehman',
+    'Talmiz ur Rehman',
+    'Hardware Design Engineer',
+    'Embedded Firmware Engineer',
+    'Qualcomm QCM6125',
+    'Quectel SC668S',
+    'AOSP Customization',
+    'BSP Development',
+    'Embedded Linux',
+    'PCB Design',
+    'Altium Designer',
+    'High Speed PCB',
+    'FreeRTOS',
+    'Shenzhen SMT Mass Production',
+  ],
+  authors: [{ name: 'M. Talmiz Ur Rehman', url: siteUrl }],
   creator: 'M. Talmiz Ur Rehman',
   publisher: 'M. Talmiz Ur Rehman',
-  robots: 'index, follow',
-  viewport: 'width=device-width, initial-scale=1',
-  themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#020617' },
-    { media: '(prefers-color-scheme: light)', color: '#f8fafc' },
-  ],
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    title: 'Talmiz ur Rehman - Senior Hardware Design Engineer (Firmware)',
-    description: 'Embedded firmware & hardware engineer specializing in Qualcomm QCM6125, AOSP/Android, BSP, and high-speed PCB design.',
-    siteName: 'Talmiz ur Rehman Portfolio',
+    url: siteUrl,
+    title: siteTitle,
+    description: siteDescription,
+    siteName: 'M. Talmiz Ur Rehman Portfolio',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'M. Talmiz Ur Rehman — Senior Hardware Design Engineer (Firmware)',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Talmiz ur Rehman - Senior Hardware Design Engineer (Firmware)',
-    description: 'Embedded firmware & hardware engineer specializing in Qualcomm QCM6125, AOSP/Android, BSP, and high-speed PCB design.',
+    title: siteTitle,
+    description: siteDescription,
+    images: ['/twitter-image'],
+    creator: '@itstalmiz',
   },
   icons: {
     icon: [
@@ -50,33 +92,75 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+    other: {
+      'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || '',
+    },
+  },
 };
 
-const personJsonLd = {
+const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'M. Talmiz Ur Rehman',
-  jobTitle: 'Senior Hardware Design Engineer (Firmware)',
-  worksFor: {
-    '@type': 'Organization',
-    name: 'AIO APP Inc',
-  },
-  url: 'https://itstalmiz.vercel.app',
-  sameAs: [
-    'https://www.linkedin.com/in/itstalmiz/',
-    'https://github.com/itstalmiz',
-  ],
-  alumniOf: {
-    '@type': 'EducationalOrganization',
-    name: 'COMSATS University Islamabad',
-  },
-  knowsAbout: [
-    'Qualcomm QCM6125',
-    'Firmware Engineering',
-    'AOSP / Android BSP',
-    'Embedded Linux',
-    'PCB Design (Altium)',
-    'RTOS',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${siteUrl}/#person`,
+      name: 'M. Talmiz Ur Rehman',
+      alternateName: 'Talmiz ur Rehman',
+      jobTitle: 'Senior Hardware Design Engineer (Firmware)',
+      worksFor: {
+        '@type': 'Organization',
+        name: 'AIO APP Inc',
+      },
+      url: siteUrl,
+      email: 'mailto:mtalmiz1234@gmail.com',
+      telephone: '+923365267868',
+      image: `${siteUrl}/talmiz.jpeg`,
+      sameAs: [
+        'https://www.linkedin.com/in/itstalmiz/',
+        'https://github.com/itstalmiz',
+      ],
+      alumniOf: {
+        '@type': 'EducationalOrganization',
+        name: 'COMSATS University Islamabad',
+      },
+      knowsAbout: [
+        'Qualcomm QCM6125 / Quectel SC668S',
+        'Firmware Engineering & Bring-up',
+        'AOSP / Android BSP',
+        'Embedded Linux Kernel Drivers',
+        'High-Speed PCB Design (Altium Designer)',
+        'FreeRTOS & Embedded C/C++',
+        'Shenzhen SMT Mass Production & GMS Flashing',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: 'M. Talmiz Ur Rehman — Portfolio',
+      description: siteDescription,
+      publisher: {
+        '@id': `${siteUrl}/#person`,
+      },
+      inLanguage: 'en-US',
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': `${siteUrl}/#webpage`,
+      url: siteUrl,
+      name: 'Talmiz ur Rehman — Senior Hardware Design Engineer (Firmware)',
+      isPartOf: {
+        '@id': `${siteUrl}/#website`,
+      },
+      about: {
+        '@id': `${siteUrl}/#person`,
+      },
+      mainEntity: {
+        '@id': `${siteUrl}/#person`,
+      },
+    },
   ],
 };
 
@@ -88,9 +172,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMs Full Context" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body className={`${inter.className} antialiased`}>

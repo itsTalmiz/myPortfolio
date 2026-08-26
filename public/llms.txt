@@ -1,0 +1,53 @@
+# M. Talmiz Ur Rehman — Senior Hardware Design Engineer (Firmware)
+
+> Senior Hardware Design & Embedded Firmware Engineer with 3+ years of experience across the full product lifecycle — Qualcomm QCM6125 / Quectel SC668S bring-up, Linux Kernel/BSP customization, AOSP/Android engineering, high-speed multilayer PCB design in Altium Designer, and Shenzhen factory mass production.
+
+## Core Profile & Summary
+- **Full Name**: M. Talmiz Ur Rehman
+- **Title**: Senior Hardware Design Engineer (Firmware)
+- **Location**: Islamabad, Pakistan (with extensive on-site mass-production engineering in Shenzhen, China)
+- **Primary Website**: https://itstalmiz.com
+- **LinkedIn**: https://www.linkedin.com/in/itstalmiz/
+- **GitHub**: https://github.com/itstalmiz
+- **Email**: mtalmiz1234@gmail.com
+- **Phone**: +92 336 5267868
+- **Resume**: https://itstalmiz.com/Resume_MTalmizUrRehman__General.pdf
+- **Full AI Context / Knowledge Base**: https://itstalmiz.com/llms-full.txt
+
+## Primary Technical Specializations
+- **SoC & Processor Platforms**: Qualcomm QCM6125, Quectel SC668S Smart Module SOM, Rockchip SoCs, ARM Cortex, Raspberry Pi 4, STM32, Arduino, Xilinx FPGA (Nexys2 / Spartan), Nvidia Tegra.
+- **Firmware, BSP & OS**: Linux Kernel bring-up, Board Support Package (BSP), Android Open Source Project (AOSP) customization, device drivers, FreeRTOS, OTA update engine (Full & Incremental), Perfetto tracing, GDB debugging.
+- **Hardware & PCB Design**: Altium Designer, EasyEDA, High-Speed Flex & Rigid-Flex PCBs, Multilayer (6+ layer) impedance-controlled routing, 90Ω differential pairs, EMI/EMC shielding, RF Antenna tuning (2.4GHz & 5GHz), DFM (Design for Manufacturing).
+- **Peripherals & Protocols**: MIPI DSI display, I2C capacitive touch controllers, LVDS LT9211D bridge, MIPI CSI camera modules, NFC PN7220 integration, UART, SPI, I2C, USB 2.0/3.0, CAN, PWM, ADC/DAC, Battery management & fast/reverse wireless charging ICs.
+- **Mass Production & Factory Operations**: 4 on-site engineering missions to Shenzhen, China for high-volume SMT production runs (reflow profiling, X-ray inspection, AOI, BGA dye & pry testing, automated GMS key flashing/provisioning, FCC/CE/EMI/EMC compliance, thermal profiling with 8-probe monitoring, aging & burn-in testing).
+- **Programming Languages**: Embedded C, C++, Python, Verilog HDL, Bash / Shell Scripting, ARM Assembly.
+
+## Key Projects
+- [AI Interactive Device (Quectel SC668S & QCM6125)](https://itstalmiz.com/#projects): End-to-end firmware development on Quectel Smart SOM; MIPI display/touch/camera bring-up, battery management ICs with reverse wireless charging, and high-speed multilayer flex PCB design.
+- [Semi-Autonomous Tracking Sentry Robot](https://www.linkedin.com/feed/update/urn:li:activity:7089844394522025984/): Raspberry Pi 4 onboard computer with OpenCV real-time target detection, pan-tilt servo tracking, wireless live telemetry, and custom power PCB.
+- [Image Convolution on FPGA (Xilinx)](https://www.linkedin.com/feed/update/urn:li:activity:7076157169204666368/): Real-time hardware-accelerated 2D convolution pipeline with Verilog ROM image streaming and VGA output display.
+- [Line-Following, Sumo & Obstacle-Avoidance Robot](https://www.linkedin.com/feed/update/urn:li:activity:6890727805563604992/): Arduino multi-mode combat and autonomous robotics platform with custom PCB chassis and Bluetooth mobile control app.
+- [Retinal Blood Vessel Segmentation Enhancement](https://itstalmiz.com/#projects): Implementation of 2D Frangi vesselness filter in MATLAB for biomedical image segmentation against clinical ground truth.
+- [4-Digit Decimal Counter on Nexys2 FPGA](https://itstalmiz.com/#projects): Parameterized Verilog counter driving multiplexed 7-segment display with BCD converter and custom clock division.
+- [IoT Plant Monitoring System](https://bit.ly/3rT93pv): NodeMCU ESP8266 IoT telemetry system with soil moisture, temp/humidity logging, and cloud-driven pump relay control.
+- [Enterprise Dynamic Network Architecture](https://itstalmiz.com/#projects): VLSM subnetting, OSPF/RIPv2 routing, VLAN segmentation, and NAT overload gateway.
+
+## Work Experience
+- **Senior Hardware Design Engineer (Firmware)** | AIO APP Inc (11/2023 – Present)
+  - Leading firmware architecture for Qualcomm QCM6125 / Quectel SC668S embedded systems.
+  - Developed custom AOSP builds, kernel drivers (LT9211D, PN7220, touch, camera), and OTA update pipeline.
+  - Designed high-speed multilayer & flex PCBs in Altium with strict EMI/EMC compliance.
+- **International Engineering Visits — Shenzhen, China** | AIO APP Inc (2024 – 2025, 4 Visits)
+  - Managed factory floor SMT lines, automated test jigs, GMS key provisioning, thermal chambers, and FCC certification testing.
+- **Hardware Design Engineer** | TeReSol Pvt. Ltd (08/2023 – 11/2023)
+  - Embedded C/C++ development, Bash automation, and Nvidia Tegra custom board flashing and validation.
+
+## Education & Accreditations
+- **BS Electrical (Computer) Engineering** | COMSATS University Islamabad (GPA: 3.31, 2019 – 2023)
+- **Certifications**: Advanced Embedded Linux Development (Coursera), IoT & Robotics with NodeMCU, Complete Linux Pro.
+- **Honors**: Microwiz Winner (Visospark '23), Leadership Excellence Award (IEEE SAC 2022), Sumo Robot Winner (HI ROBO TEC).
+
+## Contact & Inquiries
+- **Email**: mtalmiz1234@gmail.com
+- **Direct Form**: https://itstalmiz.com/#contact
+- **Availability**: Open for high-impact hardware engineering, firmware development, and embedded systems consultations.

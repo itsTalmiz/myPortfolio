@@ -418,7 +418,7 @@ export function HeroSection() {
                 <span>📧 mtalmiz1234@gmail.com</span>
                 <span>📞 +92 336 5267868</span>
                 <span>🔗 linkedin.com/in/itstalmiz</span>
-                <span>🌐 itstalmiz.vercel.app</span>
+                <span>🌐 itstalmiz.com</span>
               </p>
             </div>
 

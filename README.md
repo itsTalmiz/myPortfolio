@@ -2,7 +2,7 @@
 
 Personal portfolio site for **M. Talmiz Ur Rehman**, Senior Hardware Design Engineer (Firmware) — embedded firmware, BSP/AOSP, Qualcomm QCM6125, and high-speed PCB design.
 
-Live at [itstalmiz.vercel.app](https://itstalmiz.vercel.app)
+Live at [itstalmiz.com](https://itstalmiz.com)
 
 ## Tech Stack
 
