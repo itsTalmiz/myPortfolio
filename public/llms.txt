@@ -9,7 +9,7 @@
 - **Primary Website**: https://itstalmiz.com
 - **LinkedIn**: https://www.linkedin.com/in/itstalmiz/
 - **GitHub**: https://github.com/itstalmiz
-- **Email**: mtalmiz1234@gmail.com
+- **Email**: contact@itstalmiz.com
 - **Phone**: +92 336 5267868
 - **Resume**: https://itstalmiz.com/Resume_MTalmizUrRehman__General.pdf
 - **Full AI Context / Knowledge Base**: https://itstalmiz.com/llms-full.txt
@@ -48,6 +48,6 @@
 - **Honors**: Microwiz Winner (Visospark '23), Leadership Excellence Award (IEEE SAC 2022), Sumo Robot Winner (HI ROBO TEC).
 
 ## Contact & Inquiries
-- **Email**: mtalmiz1234@gmail.com
+- **Email**: contact@itstalmiz.com
 - **Direct Form**: https://itstalmiz.com/#contact
 - **Availability**: Open for high-impact hardware engineering, firmware development, and embedded systems consultations.

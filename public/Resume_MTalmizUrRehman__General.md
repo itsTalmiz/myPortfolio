@@ -2,7 +2,7 @@ Embedded Firmware & Hardware Design Engineer
 
 ## **M. TALMIZ UR REHMAN** 
 
-+92 336 5267868  |  mtalmiz1234@gmail.com  |  linkedin.com/in/itstalmiz  |  itstalmiz.com  |  Islamabad, Pakistan 
++92 336 5267868  |  contact@itstalmiz.com  |  linkedin.com/in/itstalmiz  |  itstalmiz.com  |  Islamabad, Pakistan 
 
 ## **SUMMARY** 
 

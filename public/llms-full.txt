@@ -3,7 +3,7 @@
 ## 1. Professional Overview
 M. Talmiz Ur Rehman is a Senior Hardware Design Engineer (Firmware) based in Islamabad, Pakistan, with direct international manufacturing engineering experience in Shenzhen, China. He bridges the critical divide between bare-metal silicon, high-speed board layout, OS/BSP kernel customization, and mass production factory lines.
 
-- **Primary Contact**: mtalmiz1234@gmail.com | +92 336 5267868
+- **Primary Contact**: contact@itstalmiz.com | +92 336 5267868
 - **Online Portfolio**: https://itstalmiz.com
 - **LinkedIn**: https://www.linkedin.com/in/itstalmiz/
 - **GitHub**: https://github.com/itstalmiz
@@ -96,6 +96,6 @@ M. Talmiz Ur Rehman is a Senior Hardware Design Engineer (Firmware) based in Isl
 
 ## 6. How to Connect
 - **Website Contact Form**: https://itstalmiz.com/#contact
-- **Direct Email**: mtalmiz1234@gmail.com
+- **Direct Email**: contact@itstalmiz.com
 - **Direct Phone**: +92 336 5267868
 - **LinkedIn Profile**: https://www.linkedin.com/in/itstalmiz/

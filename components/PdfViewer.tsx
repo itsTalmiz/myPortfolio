@@ -198,7 +198,7 @@ export function PdfViewer({ url }: PdfViewerProps) {
                 <p className="text-emerald-400 font-mono-tech text-xs mt-1">Senior Hardware Design Engineer (Firmware)</p>
                 <p className="text-xs text-muted-foreground mt-2 flex flex-wrap gap-x-4 gap-y-1 font-mono-tech">
                   <span>📍 Islamabad, Pakistan</span>
-                  <span>📧 mtalmiz1234@gmail.com</span>
+                  <span>📧 contact@itstalmiz.com</span>
                   <span>📞 +92 336 5267868</span>
                   <span>🔗 linkedin.com/in/itstalmiz</span>
                 </p>

@@ -114,7 +114,7 @@ const structuredData = {
         name: 'AIO APP Inc',
       },
       url: siteUrl,
-      email: 'mailto:mtalmiz1234@gmail.com',
+      email: 'mailto:contact@itstalmiz.com',
       telephone: '+923365267868',
       image: `${siteUrl}/talmiz.jpeg`,
       sameAs: [

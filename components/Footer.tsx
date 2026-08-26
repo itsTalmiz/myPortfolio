@@ -47,7 +47,7 @@ export function Footer() {
               </Button>
             </a>
             <a
-              href="mailto:mtalmiz1234@gmail.com"
+              href="mailto:contact@itstalmiz.com"
               aria-label="Send Email"
             >
               <Button

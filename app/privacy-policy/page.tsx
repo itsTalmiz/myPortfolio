@@ -154,8 +154,8 @@ export default function PrivacyPolicy() {
               </ul>
               <p className="mt-4">
                 To exercise any of these rights, please contact me at{' '}
-                <a href="mailto:mtalmiz1234@gmail.com" className="text-emerald-400 hover:text-emerald-300 underline">
-                  mtalmiz1234@gmail.com
+                <a href="mailto:contact@itstalmiz.com" className="text-emerald-400 hover:text-emerald-300 underline">
+                  contact@itstalmiz.com
                 </a>
               </p>
             </CardContent>
@@ -187,7 +187,7 @@ export default function PrivacyPolicy() {
                 If you have any questions about this Privacy Policy or how I handle your personal information, please contact me:
               </p>
               <div className="space-y-2">
-                <p><strong className="text-foreground">Email:</strong> <a href="mailto:mtalmiz1234@gmail.com" className="text-emerald-400 hover:text-emerald-300 underline">mtalmiz1234@gmail.com</a></p>
+                <p><strong className="text-foreground">Email:</strong> <a href="mailto:contact@itstalmiz.com" className="text-emerald-400 hover:text-emerald-300 underline">contact@itstalmiz.com</a></p>
                 <p><strong className="text-foreground">Response Time:</strong> I will respond to privacy-related inquiries within 48 hours</p>
               </div>
             </CardContent>

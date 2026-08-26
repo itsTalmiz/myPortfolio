@@ -415,7 +415,7 @@ export function HeroSection() {
             {/* Header / Contacts Card */}
             <div className="p-4 rounded-xl glass border-foreground/[0.06] bg-foreground/[0.02]">
               <p className="text-xs sm:text-sm text-muted-foreground flex flex-wrap gap-x-5 gap-y-1.5 font-mono-tech">
-                <span>📧 mtalmiz1234@gmail.com</span>
+                <span>📧 contact@itstalmiz.com</span>
                 <span>📞 +92 336 5267868</span>
                 <span>🔗 linkedin.com/in/itstalmiz</span>
                 <span>🌐 itstalmiz.com</span>

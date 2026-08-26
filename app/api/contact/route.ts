@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
               Best regards,<br>
               <strong>M. Talmiz Ur Rehman</strong><br>
               Hardware Embedded Systems Engineer<br>
-              <a href="mailto:mtalmiz1234@gmail.com" style="color: #10b981;">mtalmiz1234@gmail.com</a>
+              <a href="mailto:contact@itstalmiz.com" style="color: #10b981;">contact@itstalmiz.com</a>
             </p>
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; text-align: center;">
