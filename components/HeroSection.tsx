@@ -146,6 +146,7 @@ export function HeroSection() {
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground animate-fade-in">
                 Hi, I&apos;m <span className="gradient-text">Talmiz</span>
                 <span className="text-emerald-400">.</span>
+                <span className="sr-only"> — Senior Hardware Design &amp; Embedded Firmware Engineer in Islamabad</span>
               </h1>
 
               <div className="h-10 sm:h-12">
@@ -155,8 +156,8 @@ export function HeroSection() {
               </div>
 
               <p className="text-muted-foreground text-lg max-w-lg leading-relaxed">
-                I design and ship firmware for ARM-based Qualcomm platforms — from board bring-up
-                and BSP customization to AOSP, OTA delivery, and the PCBs underneath it all.
+                Hardware design consultant &amp; firmware engineer in Islamabad specializing in Qualcomm BSP board bring-up,
+                AOSP customization, high-speed multilayer PCB design in Altium, and mass-production hardware bring-up.
               </p>
             </div>
 

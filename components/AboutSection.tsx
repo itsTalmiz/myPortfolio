@@ -1,25 +1,29 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Reveal } from '@/components/Reveal';
-import { Code, Smartphone, Server, Cpu, Zap, Shield, Wifi, Settings, Wrench } from 'lucide-react';
+import { Code, Smartphone, Server, Cpu, Zap, Shield, Wifi, Settings, Wrench, ArrowUpRight } from 'lucide-react';
 
 const services = [
   {
     icon: Cpu,
-    title: 'Firmware & BSP',
-    description: 'Linux kernel/BSP and AOSP customization, device-driver integration, and board bring-up across display, touch, camera and audio subsystems',
+    title: 'Firmware & Linux BSP Bring-Up',
+    description: 'Qualcomm QCM6125 and Quectel SOM board bring-up, Linux kernel/BSP, Android AOSP customization, and device drivers for display, touch, camera, and audio.',
+    href: '/services/embedded-firmware-bsp',
   },
   {
     icon: Zap,
-    title: 'Hardware & PCB Design',
-    description: 'High-speed flex and multilayer PCB design with EMI control and signal integrity, from schematic capture to component-level review',
+    title: 'High-Speed Multilayer PCB Design',
+    description: 'Altium Designer high-speed flex and multilayer PCB layout with controlled impedance, EMI/EMC compliance, signal integrity (SI), and antenna tuning.',
+    href: '/services/hardware-pcb-design',
   },
   {
     icon: Wifi,
-    title: 'Mass Production & QC',
-    description: 'SMT oversight, GMS key flashing and provisioning, FCC compliance testing, and full production-line validation through to shipment',
+    title: 'Mass Production & Shenzhen NPI',
+    description: 'SMT oversight, GMS key flashing/provisioning, FCC/CE compliance testing, and hardware production-line validation through to shipment.',
+    href: '/case-studies/qualcomm-qcm6125-bringup',
   },
 ];
 
@@ -97,21 +101,26 @@ export function AboutSection() {
           <div className="space-y-6">
             {services.map((service, index) => (
               <Reveal key={index} delay={index * 100}>
-                <Card className="glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-300 p-6 group">
-                  <div className="flex items-start space-x-5">
-                    <div className="w-12 h-12 shrink-0 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/15 transition-all duration-300">
-                      <service.icon className="w-6 h-6 text-emerald-400" />
+                <Link href={service.href} className="block">
+                  <Card className="glass border-foreground/[0.06] hover:border-emerald-500/30 transition-all duration-300 p-6 group cursor-pointer">
+                    <div className="flex items-start space-x-5">
+                      <div className="w-12 h-12 shrink-0 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500/15 transition-all duration-300">
+                        <service.icon className="w-6 h-6 text-emerald-400" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between">
+                          <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-emerald-400 transition-colors">
+                            {service.title}
+                          </h3>
+                          <ArrowUpRight className="w-4 h-4 text-muted-foreground/50 group-hover:text-emerald-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          {service.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-emerald-400 transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed text-sm">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -120,7 +129,8 @@ export function AboutSection() {
           <div className="space-y-8">
             <Reveal>
               <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 relative">
-                About me
+                About Me
+                <span className="sr-only"> — Hardware Design &amp; Embedded Firmware Engineer in Islamabad</span>
                 <div className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-emerald-500 to-sky-400 rounded-full" />
               </h2>
               <Card className="glass border-foreground/[0.06] p-8 hover:border-emerald-500/20 transition-all duration-300">

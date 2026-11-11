@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -18,6 +19,7 @@ import {
   Zap,
   Dices,
   Receipt,
+  FileText,
 } from 'lucide-react';
 import {
   FpgaConvolutionArt,
@@ -33,20 +35,20 @@ import {
 const projects = [
   {
     id: 1,
-    title: "AI Device (Confidential)",
+    title: "Qualcomm QCM6125 AI Device & BSP Bring-Up",
     description:
-      "Design and development of an interactive AI device",
+      "Qualcomm QCM6125 & Quectel SC668S board bring-up, AOSP customization, and high-speed flex PCB design",
     longDescription:
-      "Developed system firmware on Quectel SOM, integrating display, touch, and camera modules for real‑time interaction. Implemented battery management, fast charging, reverse wireless charging logic, and designed high‑speed flex & multilayer PCBs with advanced signal integrity and EMI control.",
+      "Spearheaded Qualcomm QCM6125 and Quectel SC668S SOM firmware development, AOSP customization, and board bring-up. Integrated LT9211D MIPI-to-LVDS bridge, PN7220 NFC controller, and camera subsystems. Engineered high-speed flex & multilayer PCBs in Altium with controlled impedance, EMI control, and antenna tuning (2.4/5GHz).",
     image:
       "/project/ai_device_ai.jpg",
     icon: Monitor,
     technologies: [
+      "Qualcomm QCM6125",
       "Quectel SC668S",
-      "Display & Touch",
-      "Camera Integration",
-      "Power Management",
-      "Flex PCB Design",
+      "AOSP / Linux BSP",
+      "Altium Flex PCB",
+      "LT9211D & PN7220",
     ],
     category: "Embedded Systems",
     duration: "11/2023 – Present",
@@ -274,11 +276,11 @@ export function ProjectsSection() {
         <Reveal>
           <div className="mb-12 text-center">
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Projects
+              Featured Engineering Projects
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-sky-400 rounded-full mx-auto mb-6" />
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-              Hardware, embedded systems, robotics, and coursework spanning firmware, PCB design, and digital systems.
+              Specialized Qualcomm BSP board bring-up, high-speed multilayer PCB design in Altium, AOSP driver development, and embedded robotics.
             </p>
 
             {/* Category Filter Pills */}
@@ -458,6 +460,14 @@ export function ProjectsSection() {
                     </div>
 
                     <div className="flex flex-wrap gap-4">
+                      {selectedProject.id === 1 && (
+                        <Link href="/case-studies/qualcomm-qcm6125-bringup">
+                          <Button className="bg-emerald-500 hover:bg-emerald-400 text-background font-semibold transition-all duration-300 hover:scale-105">
+                            <FileText className="w-4 h-4 mr-2" />
+                            Read Case Study
+                          </Button>
+                        </Link>
+                      )}
                       {selectedProject.githubUrl !== '#' && (
                         <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Button className="bg-emerald-500 hover:bg-emerald-400 text-background transition-all duration-300 hover:scale-105">

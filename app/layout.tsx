@@ -17,9 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const siteUrl = 'https://itstalmiz.com';
-const siteTitle = 'Talmiz ur Rehman — Senior Hardware Design Engineer (Firmware)';
+const siteTitle = 'M. Talmiz ur Rehman | Embedded Firmware & Hardware Design Engineer in Islamabad';
 const siteDescription =
-  'Portfolio of M. Talmiz Ur Rehman — Embedded firmware & hardware design engineer specializing in Qualcomm QCM6125 platforms, Linux/BSP & AOSP customization, and high-speed multilayer PCB design.';
+  'Senior Hardware Design & Embedded Firmware Engineer in Islamabad specializing in Qualcomm BSP board bring-up, AOSP customization, and high-speed multilayer PCB design in Altium.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,18 +31,17 @@ export const metadata: Metadata = {
   keywords: [
     'M. Talmiz Ur Rehman',
     'Talmiz ur Rehman',
-    'Hardware Design Engineer',
-    'Embedded Firmware Engineer',
-    'Qualcomm QCM6125',
-    'Quectel SC668S',
-    'AOSP Customization',
-    'BSP Development',
-    'Embedded Linux',
-    'PCB Design',
-    'Altium Designer',
-    'High Speed PCB',
-    'FreeRTOS',
+    'Hardware Design Engineer in Islamabad',
+    'Embedded Firmware Engineer Islamabad',
+    'Qualcomm BSP Board Bring-Up',
+    'Qualcomm QCM6125 Firmware Engineer',
+    'Quectel SC668S Developer',
+    'AOSP Linux Kernel Driver Development',
+    'High Speed Multilayer PCB Design Consultant',
+    'Altium Designer Flex PCB',
     'Shenzhen SMT Mass Production',
+    'FCC EMI EMC Compliance Hardware',
+    'Embedded Hardware Design Consultant Islamabad',
   ],
   authors: [{ name: 'M. Talmiz Ur Rehman', url: siteUrl }],
   creator: 'M. Talmiz Ur Rehman',
@@ -117,6 +116,11 @@ const structuredData = {
       url: siteUrl,
       email: 'mailto:contact@itstalmiz.com',
       telephone: '+923365267868',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Islamabad',
+        addressCountry: 'PK',
+      },
       image: `${siteUrl}/talmiz.jpeg`,
       sameAs: [
         'https://www.linkedin.com/in/itstalmiz/',
@@ -128,12 +132,13 @@ const structuredData = {
       },
       knowsAbout: [
         'Qualcomm QCM6125 / Quectel SC668S',
-        'Firmware Engineering & Bring-up',
-        'AOSP / Android BSP',
-        'Embedded Linux Kernel Drivers',
-        'High-Speed PCB Design (Altium Designer)',
+        'Firmware Engineering & Board Bring-up',
+        'AOSP / Android BSP Customization',
+        'Embedded Linux Kernel Drivers (I2C, SPI, MIPI, UART)',
+        'High-Speed Multilayer PCB Design (Altium Designer)',
         'FreeRTOS & Embedded C/C++',
         'Shenzhen SMT Mass Production & GMS Flashing',
+        'FCC EMI EMC Compliance & Antenna Tuning',
       ],
     },
     {
