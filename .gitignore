@@ -37,3 +37,6 @@ next-env.d.ts
 
 # graphify
 /graphify-out
+
+# brag
+/brag-output
