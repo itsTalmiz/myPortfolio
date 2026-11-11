@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -11,10 +12,23 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <div>
-            <h3 className="text-foreground font-bold text-lg mb-2 font-mono-tech">Talmiz Ur Rehman</h3>
-            <p className="text-muted-foreground text-sm">
-              Hardware Embedded Systems Engineer
+            <h3 className="text-foreground font-bold text-lg mb-1 font-mono-tech">Talmiz Ur Rehman</h3>
+            <p className="text-muted-foreground text-sm mb-2">
+              Senior Hardware Design &amp; Embedded Firmware Engineer
             </p>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground/80 font-mono-tech">
+              <Link href="/services/embedded-firmware-bsp" className="hover:text-emerald-400 transition-colors">
+                Firmware &amp; BSP
+              </Link>
+              <span>/</span>
+              <Link href="/services/hardware-pcb-design" className="hover:text-sky-400 transition-colors">
+                PCB Design
+              </Link>
+              <span>/</span>
+              <Link href="/case-studies/qualcomm-qcm6125-bringup" className="hover:text-emerald-400 transition-colors">
+                Case Study
+              </Link>
+            </div>
           </div>
 
           <div className="flex justify-center space-x-4">
