@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 const siteUrl = 'https://itstalmiz.com';
 const siteTitle = 'M. Talmiz ur Rehman | Embedded Firmware & Hardware Design Engineer in Islamabad';
 const siteDescription =
-  'Senior Hardware Design & Embedded Firmware Engineer in Islamabad specializing in Qualcomm BSP board bring-up, AOSP customization, and high-speed multilayer PCB design in Altium.';
+  'Senior Hardware Design & Embedded Firmware Engineer in Islamabad. Full-spectrum expertise: from bare-metal C & FreeRTOS on STM32 / ESP32 microcontrollers to Qualcomm BSP, AOSP customization, and Altium high-speed PCB design.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -33,6 +33,10 @@ export const metadata: Metadata = {
     'Talmiz ur Rehman',
     'Hardware Design Engineer in Islamabad',
     'Embedded Firmware Engineer Islamabad',
+    'STM32 Firmware Developer',
+    'ESP32 IoT Developer',
+    'Bare-Metal C Embedded Developer',
+    'ARM Cortex-M Microcontroller Engineer',
     'Qualcomm BSP Board Bring-Up',
     'Qualcomm QCM6125 Firmware Engineer',
     'Quectel SC668S Developer',
@@ -131,12 +135,14 @@ const structuredData = {
         name: 'COMSATS University Islamabad',
       },
       knowsAbout: [
-        'Qualcomm QCM6125 / Quectel SC668S',
+        'STM32 & ARM Cortex-M Microcontrollers (Bare-Metal C & FreeRTOS)',
+        'ESP32 / ESP8266 IoT & Cloud Telemetry',
+        'Hardware Peripheral Drivers (DMA, Timers/PWM, ADC, CAN, SPI, I2C, UART)',
+        'Qualcomm QCM6125 / Quectel SC668S Platform Bring-Up',
         'Firmware Engineering & Board Bring-up',
         'AOSP / Android BSP Customization',
-        'Embedded Linux Kernel Drivers (I2C, SPI, MIPI, UART)',
+        'Embedded Linux Kernel Drivers (I2C, SPI, MIPI, UART, LVDS, NFC)',
         'High-Speed Multilayer PCB Design (Altium Designer)',
-        'FreeRTOS & Embedded C/C++',
         'Shenzhen SMT Mass Production & GMS Flashing',
         'FCC EMI EMC Compliance & Antenna Tuning',
       ],

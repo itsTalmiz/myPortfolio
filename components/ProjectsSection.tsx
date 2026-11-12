@@ -97,20 +97,21 @@ const projects = [
   },
   {
     id: 4,
-    title: "Line‑Following, Sumo & Obstacle‑Avoider Robot",
+    title: "Autonomous Microcontroller Robot (Sumo & Line-Following)",
     description:
-      "Multi‑mode Arduino robot: line‑following, sumo, and obstacle avoidance",
+      "Award-winning AVR ATmega microcontroller robot with hardware PWM, ADC sensor array & Bluetooth control",
     longDescription:
-      "Engineered an Arduino‑based robot capable of line following, sumo battling, and obstacle avoidance. Designed interactive Sumo competition app and used a double‑layer PCB as the chassis.",
+      "Engineered an autonomous multi-mode robot built on an AVR ATmega328P microcontroller with bare-metal C/C++ control loops. Features hardware PWM motor speed modulation, optical IR sensor ADC processing for sub-millisecond line following, ultrasonic obstacle detection, and Bluetooth telemetry via an Android app. Won 1st Prize at HI ROBO TEC Sumo Competition.",
     image:
       "/project/line_follower_ai.jpg",
     icon: GitBranch,
     technologies: [
-      "Arduino",
-      "PCB Design",
-      "C/C++",
-      "Mobile App (MIT App Inventor)",
-      "Sensor Integration",
+      "AVR (ATmega328P)",
+      "Bare-Metal C/C++",
+      "Hardware PWM & Timers",
+      "ADC Sensor Interfacing",
+      "Altium PCB Layout",
+      "Bluetooth SPP",
     ],
     category: "Robotics",
     duration: "06/2022 – 09/2022",
@@ -153,14 +154,21 @@ const projects = [
   },
   {
     id: 7,
-    title: "IoT Based Plant Monitoring System",
+    title: "ESP8266 / ESP32 IoT Smart Telemetry & Plant System",
     description:
-      "NodeMCU system tracking soil moisture, temperature & humidity with remote pump control",
+      "Wi-Fi IoT microcontroller node with ADC soil moisture, DHT telemetry & cloud MQTT pump control",
     longDescription:
-      "Built an IoT plant monitoring system on a NodeMCU that reports soil moisture, temperature, and humidity, and lets the user turn a water pump on or off remotely — accessible from anywhere via the cloud. Integrated a soil moisture sensor, a temperature/humidity sensor, and a relay to drive the pump.",
+      "Designed an automated IoT telemetry and environmental control node powered by an ESP8266/ESP32 microcontroller. Implemented non-blocking sensor acquisition over analog ADC and digital GPIO, formatted environmental payloads, and transmitted telemetry to a cloud dashboard over Wi-Fi. Features deep-sleep power saving and remote relay actuator triggering.",
     icon: Sprout,
     art: PlantMonitorArt,
-    technologies: ["NodeMCU", "Soil Moisture Sensor", "Temp/Humidity Sensor", "Relay", "IoT"],
+    technologies: [
+      "ESP32 / ESP8266",
+      "Embedded C/C++",
+      "ADC Sensor Calibration",
+      "Wi-Fi & MQTT",
+      "Deep Sleep Power Optimization",
+      "Relay Control",
+    ],
     category: "IoT",
     duration: "09/2022",
     status: "Completed",
@@ -201,14 +209,14 @@ const projects = [
   },
   {
     id: 10,
-    title: "Dice Roll",
+    title: "Microcontroller Digital Dice with OLED & Vibration Sensor",
     description:
-      "Arduino digital dice with OLED display and shake‑to‑roll detection",
+      "AVR microcontroller system with I2C SSD1306 OLED display and interrupt-driven shake detection",
     longDescription:
-      "Built a digital dice using an Arduino Uno, an OLED display for the result, push buttons for manual control, and a vibration sensor so the dice can be \"rolled\" by shaking — combining simple sensor input with real‑time display output.",
+      "Developed an embedded microcontroller project on an AVR ATmega architecture in C. Features I2C bus driver interfacing for a graphic OLED display, hardware debounce logic, external interrupt (INT0) wake-up triggered by a piezoelectric vibration sensor, and true pseudo-random roll generation.",
     icon: Dices,
     art: DiceRollArt,
-    technologies: ["Arduino", "OLED Display", "Vibration Sensor", "C"],
+    technologies: ["AVR Microcontroller", "Embedded C", "I2C Bus Driver", "OLED Display", "External Interrupts"],
     category: "Embedded Systems",
     duration: "02/2022",
     status: "Completed",

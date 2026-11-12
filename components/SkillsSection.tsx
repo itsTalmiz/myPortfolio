@@ -44,17 +44,17 @@ import {
 
 const skillCategories = {
   embedded: [
-    { name: 'C/C++ Programming', icon: Code },
-    { name: 'ARM Cortex MCUs', icon: Cpu },
-    { name: 'FreeRTOS', icon: Timer },
-    { name: 'Device Drivers', icon: Terminal },
-    { name: 'Bootloader Dev', icon: Binary },
-    { name: 'Debugging & Probing', icon: Bug },
-    { name: 'Embedded Linux', icon: Layers },
-    { name: 'IoT Development', icon: RadioTower },
-    { name: 'AOSP / Android', icon: Smartphone },
-    { name: 'BSP & Kernel', icon: Layers },
-    { name: 'OTA Updates', icon: RefreshCw },
+    { name: 'C/C++ (Bare-Metal & OS)', icon: Code },
+    { name: 'STM32 (ARM Cortex-M)', icon: Cpu },
+    { name: 'ESP32 / ESP8266 IoT', icon: RadioTower },
+    { name: 'FreeRTOS & Multitasking', icon: Timer },
+    { name: 'Bare-Metal Drivers (DMA/PWM/ADC)', icon: Terminal },
+    { name: 'AVR (ATmega) & Arduino', icon: Cpu },
+    { name: 'Qualcomm QCM6125 / SOM', icon: Cpu },
+    { name: 'Embedded Linux & Kernel', icon: Layers },
+    { name: 'AOSP / Android BSP', icon: Smartphone },
+    { name: 'Bootloader & OTA Updates', icon: RefreshCw },
+    { name: 'Signal Probing & Debugging', icon: Bug },
   ],
   hardware: [
     { name: 'PCB Design', icon: CircuitBoard },

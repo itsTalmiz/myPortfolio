@@ -5,16 +5,20 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata: Metadata = {
-  title: 'Qualcomm BSP Board Bring-Up & Embedded Firmware Engineering | Talmiz ur Rehman',
+  title: 'Qualcomm BSP, STM32 & Embedded Firmware Engineering | Talmiz ur Rehman',
   description:
-    'Specialized embedded firmware and Linux BSP board bring-up services on Qualcomm QCM6125, Quectel SOMs, and ARM platforms. AOSP customization, kernel drivers, and OTA architecture.',
+    'Full-spectrum embedded firmware services: from bare-metal C & FreeRTOS on STM32 / ESP32 microcontrollers to Qualcomm QCM6125 Linux BSP bring-up, AOSP customization, and OTA.',
   keywords: [
+    'STM32 Firmware Developer Islamabad',
+    'ESP32 FreeRTOS Firmware Engineer',
+    'Bare-Metal C Embedded Developer',
+    'ARM Cortex-M Microcontroller Engineer',
     'Qualcomm BSP Board Bring-Up',
     'Qualcomm QCM6125 Firmware Engineer',
     'Quectel SC668S Developer',
     'Embedded Firmware Engineer Islamabad',
     'AOSP Linux Kernel Driver Development',
-    'Linux Device Driver Integration',
+    'CAN Bus SPI I2C Device Driver Integration',
     'Embedded C C++ Firmware Consultant',
   ],
   alternates: {
@@ -23,6 +27,12 @@ export const metadata: Metadata = {
 };
 
 const capabilities = [
+  {
+    icon: Cpu,
+    title: 'Microcontroller (MCU) Firmware: STM32 & ESP32',
+    description:
+      'Production-grade firmware in bare-metal C and FreeRTOS for 32-bit and 8-bit MCUs: STM32 (ARM Cortex-M0/M3/M4), ESP32 / ESP8266, and AVR. Low-level peripheral drivers for DMA, hardware timers/PWM, ADC, CAN bus, I2C, and SPI.',
+  },
   {
     icon: Cpu,
     title: 'Qualcomm QCM6125 / SOM Board Bring-Up',
@@ -62,12 +72,17 @@ const capabilities = [
 ];
 
 const technologies = [
+  'STM32 (ARM Cortex-M0/M3/M4)',
+  'ESP32 / ESP8266 IoT',
+  'FreeRTOS Multitasking',
+  'Bare-Metal C & Register-Level Drivers',
+  'CAN / CAN-FD & Industrial Buses',
+  'DMA, Timers & Hardware PWM',
   'Qualcomm QCM6125',
   'Quectel SC668S SOM',
   'Embedded Linux Kernel',
   'Android (AOSP)',
   'Embedded C / C++',
-  'FreeRTOS',
   'Device Tree (.dts)',
   'OTA Updates',
   'MIPI DSI & CSI',
@@ -109,13 +124,13 @@ export default function EmbeddedFirmwareBspPage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
-            Qualcomm BSP Board Bring-Up &amp; <span className="gradient-text">Embedded Firmware</span>
+            MCU &amp; MPU Firmware: <span className="gradient-text">STM32, ESP32 &amp; Qualcomm BSP</span>
           </h1>
 
           <p className="text-lg text-muted-foreground leading-relaxed">
-            From initial silicon power-on to production-ready Android/Linux builds. Specialized in 
-            ARM-based Qualcomm QCM6125 and Quectel SOM architectures, custom driver integration, AOSP 
-            customization, and reliable Over-The-Air (OTA) delivery.
+            Full-spectrum embedded firmware engineering: from low-power bare-metal C &amp; FreeRTOS on 
+            32-bit microcontrollers (STM32, ESP32, ARM Cortex-M) to high-speed Linux BSP board bring-up, 
+            AOSP customization, and OTA delivery on Qualcomm QCM6125 and Quectel SOM platforms.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">

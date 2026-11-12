@@ -31,19 +31,20 @@ import Link from 'next/link';
 
 const roles = [
   'Senior Hardware Design Engineer',
-  'Embedded Firmware Engineer',
-  'AOSP & BSP Developer',
-  'PCB Designer',
+  'STM32 & Microcontroller Firmware',
+  'Qualcomm BSP & AOSP Developer',
+  'High-Speed PCB Designer (Altium)',
+  'IoT & FreeRTOS Systems Engineer',
 ];
 
 const technologies = [
   { name: 'Embedded C', icon: Code },
+  { name: 'STM32 / ARM', icon: Cpu },
+  { name: 'ESP32 / FreeRTOS', icon: Timer },
+  { name: 'Altium PCB', icon: CircuitBoard },
+  { name: 'Qualcomm / BSP', icon: Server },
+  { name: 'AOSP / Android', icon: Radio },
   { name: 'C++', icon: FileCode },
-  { name: 'PCB Design', icon: CircuitBoard },
-  { name: 'RTOS', icon: Timer },
-  { name: 'AOSP/Android', icon: Radio },
-  { name: 'Embedded Linux', icon: Server },
-  { name: 'Firmware Development', icon: Cpu },
   { name: 'Verilog', icon: Binary },
 ];
 
@@ -156,8 +157,7 @@ export function HeroSection() {
               </div>
 
               <p className="text-muted-foreground text-lg max-w-lg leading-relaxed">
-                Hardware design consultant &amp; firmware engineer in Islamabad specializing in Qualcomm BSP board bring-up,
-                AOSP customization, high-speed multilayer PCB design in Altium, and mass-production hardware bring-up.
+                Embedded firmware &amp; hardware design engineer in Islamabad. Full-spectrum expertise: from bare-metal C &amp; FreeRTOS on 32-bit microcontrollers (STM32, ESP32, ARM Cortex-M) to Qualcomm BSP board bring-up, AOSP, and high-speed Altium PCB design.
               </p>
             </div>
 
@@ -436,20 +436,20 @@ export function HeroSection() {
               <h3 className="text-sm font-bold text-emerald-400 font-mono-tech mb-3">// TECHNICAL SKILLS</h3>
               <div className="grid sm:grid-cols-2 gap-3 text-xs">
                 <div className="p-3 rounded-lg glass border-foreground/[0.06]">
-                  <span className="font-semibold text-foreground block mb-1">Languages:</span>
-                  <span className="text-muted-foreground">C, C++, Python, Embedded C, Bash/Shell, ARM Assembly, Verilog</span>
+                  <span className="font-semibold text-foreground block mb-1">Microcontrollers &amp; Platforms:</span>
+                  <span className="text-muted-foreground">STM32 (ARM Cortex-M), ESP32 / ESP8266, AVR (ATmega), Qualcomm QCM6125, Quectel SC668S SOM, NVIDIA Tegra</span>
                 </div>
                 <div className="p-3 rounded-lg glass border-foreground/[0.06]">
-                  <span className="font-semibold text-foreground block mb-1">Firmware & OS:</span>
-                  <span className="text-muted-foreground">Embedded Linux, AOSP/Android, BSP & device drivers, Kernel, OTA (Full/Incremental), RTOS, Perfetto</span>
+                  <span className="font-semibold text-foreground block mb-1">Firmware &amp; OS:</span>
+                  <span className="text-muted-foreground">Bare-Metal C, FreeRTOS, Embedded Linux, AOSP/Android, BSP &amp; device drivers, DMA, Hardware Timers/PWM, OTA</span>
                 </div>
                 <div className="p-3 rounded-lg glass border-foreground/[0.06]">
-                  <span className="font-semibold text-foreground block mb-1">Hardware & PCB:</span>
-                  <span className="text-muted-foreground">Altium Designer, EasyEDA, High-speed flex & multilayer PCB design, EMI control, Signal integrity</span>
+                  <span className="font-semibold text-foreground block mb-1">Hardware &amp; PCB:</span>
+                  <span className="text-muted-foreground">Altium Designer, EasyEDA, High-speed flex &amp; multilayer PCB design, EMI control, Signal integrity</span>
                 </div>
                 <div className="p-3 rounded-lg glass border-foreground/[0.06]">
-                  <span className="font-semibold text-foreground block mb-1">Platforms & Protocols:</span>
-                  <span className="text-muted-foreground">Qualcomm QCM6125, Quectel SC668S SOM, ARM; I2C, SPI, UART</span>
+                  <span className="font-semibold text-foreground block mb-1">Protocols &amp; Buses:</span>
+                  <span className="text-muted-foreground">I2C, SPI, UART, CAN / CAN-FD, USB 2.0/3.0, MIPI DSI/CSI, LVDS, NFC (NCI 2.2), Wi-Fi, BLE</span>
                 </div>
                 <div className="p-3 rounded-lg glass border-foreground/[0.06]">
                   <span className="font-semibold text-foreground block mb-1">Production & QC:</span>

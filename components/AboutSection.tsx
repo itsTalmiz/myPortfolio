@@ -135,13 +135,10 @@ export function AboutSection() {
               </h2>
               <Card className="glass border-foreground/[0.06] p-8 hover:border-emerald-500/20 transition-all duration-300">
                 <p className="text-foreground/90 text-lg leading-relaxed mb-6">
-                  Embedded firmware and hardware engineer with 3 years across the full product lifecycle — firmware and BSP bring-up,
-                  PCB design, hardware integration, and mass production. Hands-on with ARM-based Qualcomm QCM6125 / Quectel SOM platforms,
-                  Android (AOSP), OTA, and high-speed multilayer PCB design in Altium.
+                  Embedded firmware and hardware engineer with 3 years across the full product lifecycle — from bare-metal C &amp; FreeRTOS firmware on microcontrollers (STM32, ESP32, AVR) to Qualcomm QCM6125 / Quectel SOM board bring-up, AOSP customization, and high-speed multilayer PCB design in Altium Designer.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Proven at taking products from prototype to production, working shoulder-to-shoulder with cross-functional hardware teams,
-                  mentoring junior engineers, and building structured technical documentation.
+                  Winner of the <strong className="text-foreground">Microwiz Microcontroller Competition</strong> (Visospark &apos;23) and <strong className="text-foreground">HI ROBO TEC Sumo Robot Competition</strong>. Proven at taking products from schematic and prototype through to Shenzhen mass production.
                 </p>
               </Card>
             </Reveal>

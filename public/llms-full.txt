@@ -14,6 +14,7 @@ M. Talmiz Ur Rehman is a Senior Hardware Design Engineer (Firmware) based in Isl
 ## 2. Technical Competencies & Deep Domain Expertise
 
 ### 2.1 Silicon & Processing Architectures
+- **Microcontrollers (MCUs) & Real-Time Processing**: Extensive practical development on STM32 (ARM Cortex-M0, M3, M4), ESP32 / ESP8266 (Wi-Fi/Bluetooth IoT SoCs), AVR (ATmega328P, ATmega2560), and 8051. Production experience with bare-metal register-level drivers, FreeRTOS multitasking, DMA, hardware PWM, ADC, and CAN bus. Winner of the Microwiz Microcontroller Competition (Visospark '23).
 - **Qualcomm Snapdragon / IoT Platforms**: Qualcomm QCM6125 (SM6125), Quectel SC668S Smart Module.
 - **ARM Architectures**: ARM Cortex-A series (A73/A53), ARM Cortex-M series (M0, M3, M4, M7), ARM Assembly language.
 - **FPGAs & CPLDs**: Xilinx Spartan/Artix, Nexys2 board, Verilog HDL synthesis, timing constraints, clock dividers, finite state machines (FSM), VGA & memory controllers.
