@@ -43,18 +43,22 @@ const specializations = [
 ];
 
 const CountUpAnimation = ({ end, duration = 2000, symbol = '' }: { end: number; duration?: number; symbol?: string }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end);
+  const [hasMounted, setHasMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setHasMounted(true);
+    setCount(0);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     if (ref.current) {
@@ -83,9 +87,14 @@ const CountUpAnimation = ({ end, duration = 2000, symbol = '' }: { end: number; 
   }, [isVisible, end, duration]);
 
   return (
-    <div ref={ref} className="text-3xl lg:text-4xl font-bold text-foreground font-mono-tech">
-      {count}
-      <span className="text-emerald-400">{symbol}</span>
+    <div
+      ref={ref}
+      className="text-3xl lg:text-4xl font-bold text-foreground font-mono-tech"
+      aria-label={`${end}${symbol}`}
+    >
+      <span aria-hidden="true">{hasMounted ? count : end}</span>
+      <span className="text-emerald-400" aria-hidden="true">{symbol}</span>
+      <span className="sr-only">{end}{symbol}</span>
     </div>
   );
 };
