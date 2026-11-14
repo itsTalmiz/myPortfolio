@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export const metadata: Metadata = {
   title: 'Qualcomm BSP, STM32 & Embedded Firmware Engineering | Talmiz ur Rehman',
   description:
-    'Full-spectrum embedded firmware services: from bare-metal C & FreeRTOS on STM32 / ESP32 microcontrollers to Qualcomm QCM6125 Linux BSP bring-up, AOSP customization, and OTA.',
+    'Embedded firmware and BSP services: Qualcomm QCM6125 Linux board bring-up, AOSP customization, STM32 / ESP32 FreeRTOS firmware, and kernel device drivers.',
   keywords: [
     'STM32 Firmware Developer Islamabad',
     'ESP32 FreeRTOS Firmware Engineer',

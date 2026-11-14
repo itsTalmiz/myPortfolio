@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export const metadata: Metadata = {
   title: 'STM32 & ESP32 Microcontroller Firmware Development | Talmiz ur Rehman',
   description:
-    'Production-grade microcontroller firmware engineering in bare-metal C/C++ and FreeRTOS. Specializing in STM32 (ARM Cortex-M), ESP32 IoT, CAN bus, low-power battery optimization, and industrial peripheral drivers.',
+    'Production-grade microcontroller firmware in bare-metal C and FreeRTOS. Specialized in STM32 Cortex-M, ESP32 IoT, CAN bus, and low-power battery optimization.',
   keywords: [
     'STM32 Firmware Developer Islamabad',
     'ESP32 FreeRTOS Firmware Engineer',

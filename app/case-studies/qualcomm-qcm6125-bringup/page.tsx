@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export const metadata: Metadata = {
   title: 'Case Study: Qualcomm QCM6125 Board Bring-Up, AOSP & Altium PCB | Talmiz ur Rehman',
   description:
-    'Engineering case study: Qualcomm QCM6125 and Quectel SC668S board bring-up, Lontium LT9211D LVDS bridge, NXP PN7220 NFC integration, and high-speed flex PCB in Altium.',
+    'Case study: Qualcomm QCM6125 & Quectel SC668S board bring-up, LT9211D LVDS bridge, PN7220 NFC integration, and Altium high-speed flex PCB for mass production.',
   keywords: [
     'Qualcomm QCM6125 Board Bring-Up Case Study',
     'Quectel SC668S Firmware Engineer',
