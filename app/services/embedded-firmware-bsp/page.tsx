@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata: Metadata = {
-  title: 'Qualcomm BSP, STM32 & Embedded Firmware Engineering | Talmiz ur Rehman',
+  title: 'Qualcomm BSP & Embedded Firmware | Talmiz Ur Rehman',
   description:
     'Embedded firmware and BSP services: Qualcomm QCM6125 Linux board bring-up, AOSP customization, STM32 / ESP32 FreeRTOS firmware, and kernel device drivers.',
   keywords: [

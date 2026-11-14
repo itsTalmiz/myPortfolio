@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const siteUrl = 'https://itstalmiz.com';
-const siteTitle = 'M. Talmiz ur Rehman | Embedded Firmware & Hardware Design Engineer in Islamabad';
+const siteTitle = 'Talmiz Ur Rehman | Firmware & Hardware Engineer, Islamabad';
 const siteDescription =
   'Senior Hardware & Embedded Firmware Engineer in Islamabad. Specialist in STM32, ESP32, FreeRTOS, Qualcomm BSP bring-up, and Altium high-speed PCB design.';
 

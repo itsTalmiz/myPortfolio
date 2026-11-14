@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata: Metadata = {
-  title: 'High-Speed Multilayer PCB Design & Altium Engineering Services | Talmiz ur Rehman',
+  title: 'High-Speed Multilayer PCB Design | Talmiz Ur Rehman',
   description:
     'High-speed flex and multilayer PCB design in Altium Designer. Controlled impedance, differential routing, EMI/EMC compliance, and Shenzhen mass production.',
   keywords: [
