@@ -95,7 +95,27 @@ M. Talmiz Ur Rehman is a Senior Hardware Design Engineer (Firmware) based in Isl
 
 ---
 
-## 6. How to Connect
+## 6. Dedicated Engineering Service Offerings
+
+### Service 1: STM32 & ESP32 Microcontroller Firmware Development
+- **URL**: https://itstalmiz.com/services/stm32-esp32-firmware
+- **Scope**: Register-level bare-metal C, C++17, and FreeRTOS multitasking. Deep expertise in STM32 (ARM Cortex-M0/M3/M4/M7) using STM32CubeIDE/LL and ESP32 / ESP32-S3 using ESP-IDF. DMA ring buffers, hardware timers/PWM, CAN bus (2.0B / CAN-FD), RS485 Modbus RTU, SPI/I2C state machines, low-power coin-cell/battery sleep profiling, BLE 5.0 GATT, Wi-Fi MQTT telemetry, and JTAG/SWD lab debugging.
+
+### Service 2: Qualcomm QCM6125 Board Bring-Up & Embedded Linux BSP
+- **URL**: https://itstalmiz.com/services/embedded-firmware-bsp
+- **Scope**: Complete hardware bring-up on Qualcomm QCM6125 and Quectel SC668S Smart SOMs. Linux kernel driver development, device tree (.dts) configuration, AOSP Android OS customization, SELinux policy, display/touch/camera drivers (LT9211D MIPI-LVDS bridge, PN7220 NFC), and secure OTA pipelines.
+
+### Service 3: High-Speed Multilayer & Flex PCB Design
+- **URL**: https://itstalmiz.com/services/hardware-pcb-design
+- **Scope**: 4-layer to 10-layer rigid, flex, and rigid-flex PCB design in Altium Designer. Controlled impedance (50Ω single-ended, 90Ω/100Ω differential pairs), signal integrity (SI) & power integrity (PI), component-level EMI/EMC mitigation, 2.4/5GHz RF antenna matching, and DFM/DFA for Shenzhen SMT lines.
+
+### Featured Case Study: Qualcomm QCM6125 Board Bring-Up & Shenzhen NPI
+- **URL**: https://itstalmiz.com/case-studies/qualcomm-qcm6125-bringup
+- **Scope**: Complete deep dive into board bring-up, factory flashing jigs, 4 on-site engineering missions to Shenzhen, China, GMS key provisioning, and FCC compliance.
+
+---
+
+## 7. How to Connect
 - **Website Contact Form**: https://itstalmiz.com/#contact
 - **Direct Email**: contact@itstalmiz.com
 - **Direct Phone**: +92 336 5267868

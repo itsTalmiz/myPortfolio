@@ -14,6 +14,12 @@ const services = [
     href: '/services/embedded-firmware-bsp',
   },
   {
+    icon: Code,
+    title: 'STM32 & ESP32 Microcontroller Firmware',
+    description: 'Bare-metal C and FreeRTOS firmware for STM32 (ARM Cortex-M) and ESP32. CAN bus, RS485 Modbus, DMA drivers, and low-power battery optimization.',
+    href: '/services/stm32-esp32-firmware',
+  },
+  {
     icon: Zap,
     title: 'High-Speed Multilayer PCB Design',
     description: 'Altium Designer high-speed flex and multilayer PCB layout with controlled impedance, EMI/EMC compliance, signal integrity (SI), and antenna tuning.',

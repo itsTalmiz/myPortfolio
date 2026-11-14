@@ -173,6 +173,51 @@ const structuredData = {
         '@id': `${siteUrl}/#person`,
       },
     },
+    {
+      '@type': 'Service',
+      '@id': `${siteUrl}/services/stm32-esp32-firmware/#service`,
+      name: 'STM32 & ESP32 Microcontroller Firmware Development',
+      provider: {
+        '@id': `${siteUrl}/#person`,
+      },
+      serviceType: 'Embedded Firmware Engineering',
+      description: 'Production-grade microcontroller firmware engineering in bare-metal C and FreeRTOS for STM32, ESP32, CAN bus, and low-power IoT devices.',
+      areaServed: {
+        '@type': 'Country',
+        name: 'Worldwide',
+      },
+      url: `${siteUrl}/services/stm32-esp32-firmware`,
+    },
+    {
+      '@type': 'Service',
+      '@id': `${siteUrl}/services/embedded-firmware-bsp/#service`,
+      name: 'Qualcomm QCM6125 Board Bring-Up & Embedded Linux BSP Services',
+      provider: {
+        '@id': `${siteUrl}/#person`,
+      },
+      serviceType: 'Firmware & BSP Engineering',
+      description: 'Full hardware bring-up, Linux kernel drivers, AOSP customization, and OTA systems for Qualcomm QCM6125 and Quectel SC668S platforms.',
+      areaServed: {
+        '@type': 'Country',
+        name: 'Worldwide',
+      },
+      url: `${siteUrl}/services/embedded-firmware-bsp`,
+    },
+    {
+      '@type': 'Service',
+      '@id': `${siteUrl}/services/hardware-pcb-design/#service`,
+      name: 'High-Speed Multilayer PCB Layout & Altium Hardware Engineering',
+      provider: {
+        '@id': `${siteUrl}/#person`,
+      },
+      serviceType: 'Hardware & PCB Design',
+      description: 'High-speed multilayer and flex PCB design with controlled impedance, EMI/EMC compliance, SI/PI, and Shenzhen DFM optimization.',
+      areaServed: {
+        '@type': 'Country',
+        name: 'Worldwide',
+      },
+      url: `${siteUrl}/services/hardware-pcb-design`,
+    },
   ],
 };
 

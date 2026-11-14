@@ -15,13 +15,19 @@
 - **Full AI Context / Knowledge Base**: https://itstalmiz.com/llms-full.txt
 
 ## Primary Technical Specializations
-- **Microcontrollers (MCUs) & Bare-Metal C**: Extensive practical experience with STM32 (ARM Cortex-M0/M3/M4), ESP32 / ESP8266 (Wi-Fi/BLE IoT), AVR (ATmega328P), and 8051/PIC. Expertise in bare-metal C register-level programming, FreeRTOS multitasking, DMA, hardware timers/PWM, ADC calibration, CAN / CAN-FD, I2C, SPI, and deep-sleep low-power design. Winner of the Visospark '23 Microwiz Microcontroller Competition.
+- **Microcontrollers (MCUs) & Bare-Metal C**: Extensive practical experience with STM32 (ARM Cortex-M0/M3/M4/M7), ESP32 / ESP8266 (Wi-Fi/BLE IoT), AVR (ATmega328P), and 8051/PIC. Expertise in bare-metal C register-level programming, FreeRTOS multitasking, DMA, hardware timers/PWM, ADC calibration, CAN / CAN-FD, I2C, SPI, and deep-sleep low-power design. Winner of the Visospark '23 Microwiz Microcontroller Competition.
 - **SoC & Processor Platforms**: Qualcomm QCM6125, Quectel SC668S Smart Module SOM, Rockchip SoCs, ARM Cortex-A, Raspberry Pi 4, STM32, Arduino, Xilinx FPGA (Nexys2 / Spartan), Nvidia Tegra.
 - **Firmware, BSP & OS**: Linux Kernel bring-up, Board Support Package (BSP), Android Open Source Project (AOSP) customization, device drivers, FreeRTOS, OTA update engine (Full & Incremental), Perfetto tracing, GDB debugging.
 - **Hardware & PCB Design**: Altium Designer, EasyEDA, High-Speed Flex & Rigid-Flex PCBs, Multilayer (6+ layer) impedance-controlled routing, 90Ω differential pairs, EMI/EMC shielding, RF Antenna tuning (2.4GHz & 5GHz), DFM (Design for Manufacturing).
 - **Peripherals & Protocols**: MIPI DSI display, I2C capacitive touch controllers, LVDS LT9211D bridge, MIPI CSI camera modules, NFC PN7220 integration, UART, SPI, I2C, USB 2.0/3.0, CAN, PWM, ADC/DAC, Battery management & fast/reverse wireless charging ICs.
 - **Mass Production & Factory Operations**: 4 on-site engineering missions to Shenzhen, China for high-volume SMT production runs (reflow profiling, X-ray inspection, AOI, BGA dye & pry testing, automated GMS key flashing/provisioning, FCC/CE/EMI/EMC compliance, thermal profiling with 8-probe monitoring, aging & burn-in testing).
 - **Programming Languages**: Embedded C, C++, Python, Verilog HDL, Bash / Shell Scripting, ARM Assembly.
+
+## Dedicated Service Pages & Case Studies
+- [STM32 & ESP32 Microcontroller Firmware](https://itstalmiz.com/services/stm32-esp32-firmware): Bare-metal C, FreeRTOS, ARM Cortex-M0/M3/M4/M7, ESP-IDF, CAN bus, Modbus, DMA drivers, and low-power battery optimization.
+- [Qualcomm BSP & Embedded Firmware](https://itstalmiz.com/services/embedded-firmware-bsp): Board bring-up, Linux kernel drivers, AOSP customization, and OTA update systems for Qualcomm QCM6125 and Quectel SC668S.
+- [High-Speed Multilayer PCB Design](https://itstalmiz.com/services/hardware-pcb-design): Altium Designer flex and multilayer layout, impedance control, SI/PI, and EMI/EMC compliance.
+- [Qualcomm QCM6125 Bring-Up Case Study](https://itstalmiz.com/case-studies/qualcomm-qcm6125-bringup): Deep-dive into Shenzhen mass production, LT9211D, PN7220, and GMS flashing.
 
 ## Key Projects
 - [AI Interactive Device (Quectel SC668S & QCM6125)](https://itstalmiz.com/#projects): End-to-end firmware development on Quectel Smart SOM; MIPI display/touch/camera bring-up, battery management ICs with reverse wireless charging, and high-speed multilayer flex PCB design.

@@ -21,6 +21,10 @@ export function Footer() {
                 Firmware &amp; BSP
               </Link>
               <span>/</span>
+              <Link href="/services/stm32-esp32-firmware" className="hover:text-emerald-400 transition-colors">
+                STM32 &amp; ESP32
+              </Link>
+              <span>/</span>
               <Link href="/services/hardware-pcb-design" className="hover:text-sky-400 transition-colors">
                 PCB Design
               </Link>
