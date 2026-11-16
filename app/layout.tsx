@@ -144,6 +144,7 @@ const structuredData = {
         'Embedded Linux Kernel Drivers (I2C, SPI, MIPI, UART, LVDS, NFC)',
         'High-Speed Multilayer PCB Design (Altium Designer)',
         'Shenzhen SMT Mass Production & GMS Flashing',
+        'Google Mobile Services (GMS) Certification & CTS/VTS Compliance',
         'FCC EMI EMC Compliance & Antenna Tuning',
       ],
     },
@@ -217,6 +218,25 @@ const structuredData = {
         name: 'Worldwide',
       },
       url: `${siteUrl}/services/hardware-pcb-design`,
+    },
+    {
+      '@type': 'TechArticle',
+      '@id': `${siteUrl}/case-studies/google-gms-certification/#article`,
+      headline: 'Google Mobile Services (GMS) Certification for Custom Android Hardware',
+      description: 'Engineering lead for achieving official Google Mobile Services (GMS) certification on proprietary Qualcomm Android hardware (AIO TSAI / T7), officially listed in Google Play Supported Devices directory.',
+      author: {
+        '@id': `${siteUrl}/#person`,
+      },
+      publisher: {
+        '@id': `${siteUrl}/#person`,
+      },
+      url: `${siteUrl}/case-studies/google-gms-certification`,
+      about: [
+        'Google Mobile Services',
+        'Android CTS VTS GTS Compliance',
+        'Qualcomm QCM6125',
+        'Embedded Android Hardware',
+      ],
     },
   ],
 };

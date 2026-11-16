@@ -109,9 +109,13 @@ M. Talmiz Ur Rehman is a Senior Hardware Design Engineer (Firmware) based in Isl
 - **URL**: https://itstalmiz.com/services/hardware-pcb-design
 - **Scope**: 4-layer to 10-layer rigid, flex, and rigid-flex PCB design in Altium Designer. Controlled impedance (50Ω single-ended, 90Ω/100Ω differential pairs), signal integrity (SI) & power integrity (PI), component-level EMI/EMC mitigation, 2.4/5GHz RF antenna matching, and DFM/DFA for Shenzhen SMT lines.
 
-### Featured Case Study: Qualcomm QCM6125 Board Bring-Up & Shenzhen NPI
+### Featured Case Study 1: Qualcomm QCM6125 Board Bring-Up & Shenzhen NPI
 - **URL**: https://itstalmiz.com/case-studies/qualcomm-qcm6125-bringup
 - **Scope**: Complete deep dive into board bring-up, factory flashing jigs, 4 on-site engineering missions to Shenzhen, China, GMS key provisioning, and FCC compliance.
+
+### Featured Case Study 2: Google Mobile Services (GMS) Certification for Custom Android Hardware
+- **URL**: https://itstalmiz.com/case-studies/google-gms-certification
+- **Scope**: Engineering lead for achieving official Google Mobile Services (GMS) certification for custom enterprise Android hardware (Retail Branding: AIOAPPInc, Marketing Name: TSAI, Model: T7). Covers passing Android Compatibility Test Suite (CTS), Vendor Test Suite (VTS), and GTS with zero unapproved failures; SELinux MAC policy hardening and zero-neverallow enforcement; TrustZone attestation key injection on automated Shenzhen SMT factory lines; and official registration on the Google Play Supported Devices public database. Awarded Star Performer Q2 2026.
 
 ---
 

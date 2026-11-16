@@ -28,8 +28,10 @@
 - [Qualcomm BSP & Embedded Firmware](https://itstalmiz.com/services/embedded-firmware-bsp): Board bring-up, Linux kernel drivers, AOSP customization, and OTA update systems for Qualcomm QCM6125 and Quectel SC668S.
 - [High-Speed Multilayer PCB Design](https://itstalmiz.com/services/hardware-pcb-design): Altium Designer flex and multilayer layout, impedance control, SI/PI, and EMI/EMC compliance.
 - [Qualcomm QCM6125 Bring-Up Case Study](https://itstalmiz.com/case-studies/qualcomm-qcm6125-bringup): Deep-dive into Shenzhen mass production, LT9211D, PN7220, and GMS flashing.
+- [Google Mobile Services (GMS) Certification](https://itstalmiz.com/case-studies/google-gms-certification): Architectural and testing breakdown of CTS/VTS/GTS compliance, SELinux zero-neverallow enforcement, automated Shenzhen factory key flashing, and official Google Play Supported Devices database verification for custom Qualcomm hardware.
 
 ## Key Projects
+- [Official Google GMS Certified Device (AIOAPPInc TSAI / T7)](https://itstalmiz.com/case-studies/google-gms-certification): Achieved official Google Mobile Services certification for custom Qualcomm Android hardware; officially listed on Google Play Supported Devices database.
 - [AI Interactive Device (Quectel SC668S & QCM6125)](https://itstalmiz.com/#projects): End-to-end firmware development on Quectel Smart SOM; MIPI display/touch/camera bring-up, battery management ICs with reverse wireless charging, and high-speed multilayer flex PCB design.
 - [Semi-Autonomous Tracking Sentry Robot](https://www.linkedin.com/feed/update/urn:li:activity:7089844394522025984/): Raspberry Pi 4 onboard computer with OpenCV real-time target detection, pan-tilt servo tracking, wireless live telemetry, and custom power PCB.
 - [Image Convolution on FPGA (Xilinx)](https://www.linkedin.com/feed/update/urn:li:activity:7076157169204666368/): Real-time hardware-accelerated 2D convolution pipeline with Verilog ROM image streaming and VGA output display.

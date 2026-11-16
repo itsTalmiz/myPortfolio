@@ -34,6 +34,30 @@ import {
 
 const projects = [
   {
+    id: 0,
+    title: "Official Google Mobile Services (GMS) Certification",
+    description:
+      "Led engineering compliance to achieve official Google GMS Certification for custom Qualcomm Android hardware (TSAI / T7)",
+    longDescription:
+      "Spearheaded technical compliance, CTS/VTS/GTS automated testing, SELinux policy hardening, and cryptographic factory key provisioning to achieve official Google Mobile Services (GMS) approval for custom enterprise Android hardware (Retail Branding: AIOAPPInc, Model: T7). Verified and listed in Google Play Supported Devices official directory.",
+    image:
+      "/project/gms_google_partner_listing.jpg",
+    icon: Shield,
+    technologies: [
+      "Official Google GMS Approved",
+      "Android CTS / VTS / GTS",
+      "SELinux Zero-Neverallow",
+      "Qualcomm QCM6125",
+      "Shenzhen Production Flashing",
+    ],
+    category: "Embedded Systems",
+    duration: "2023 – 2026",
+    status: "Completed",
+    githubUrl: "#",
+    liveUrl: "https://storage.googleapis.com/play_public/supported_devices.html",
+    caseStudyUrl: "/case-studies/google-gms-certification",
+  },
+  {
     id: 1,
     title: "Qualcomm QCM6125 AI Device & BSP Bring-Up",
     description:
@@ -55,6 +79,7 @@ const projects = [
     status: "In Progress",
     githubUrl: "#",
     liveUrl: "#",
+    caseStudyUrl: "/case-studies/qualcomm-qcm6125-bringup",
   },
   {
     id: 2,
@@ -468,7 +493,15 @@ export function ProjectsSection() {
                     </div>
 
                     <div className="flex flex-wrap gap-4">
-                      {selectedProject.id === 1 && (
+                      {'caseStudyUrl' in selectedProject && selectedProject.caseStudyUrl && (
+                        <Button asChild className="bg-emerald-500 hover:bg-emerald-400 text-background font-semibold transition-all duration-300 hover:scale-105">
+                          <Link href={selectedProject.caseStudyUrl as string}>
+                            <FileText className="w-4 h-4 mr-2" />
+                            Read Case Study
+                          </Link>
+                        </Button>
+                      )}
+                      {selectedProject.id === 1 && !('caseStudyUrl' in selectedProject) && (
                         <Button asChild className="bg-emerald-500 hover:bg-emerald-400 text-background font-semibold transition-all duration-300 hover:scale-105">
                           <Link href="/case-studies/qualcomm-qcm6125-bringup">
                             <FileText className="w-4 h-4 mr-2" />

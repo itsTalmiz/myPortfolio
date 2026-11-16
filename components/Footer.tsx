@@ -30,7 +30,11 @@ export function Footer() {
               </Link>
               <span>/</span>
               <Link href="/case-studies/qualcomm-qcm6125-bringup" className="hover:text-emerald-400 transition-colors">
-                Case Study
+                Qualcomm Bring-Up
+              </Link>
+              <span>/</span>
+              <Link href="/case-studies/google-gms-certification" className="hover:text-emerald-400 transition-colors">
+                Google GMS Certified
               </Link>
             </div>
           </div>
