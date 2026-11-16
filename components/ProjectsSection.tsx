@@ -469,28 +469,28 @@ export function ProjectsSection() {
 
                     <div className="flex flex-wrap gap-4">
                       {selectedProject.id === 1 && (
-                        <Link href="/case-studies/qualcomm-qcm6125-bringup">
-                          <Button className="bg-emerald-500 hover:bg-emerald-400 text-background font-semibold transition-all duration-300 hover:scale-105">
+                        <Button asChild className="bg-emerald-500 hover:bg-emerald-400 text-background font-semibold transition-all duration-300 hover:scale-105">
+                          <Link href="/case-studies/qualcomm-qcm6125-bringup">
                             <FileText className="w-4 h-4 mr-2" />
                             Read Case Study
-                          </Button>
-                        </Link>
+                          </Link>
+                        </Button>
                       )}
                       {selectedProject.githubUrl !== '#' && (
-                        <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Button className="bg-emerald-500 hover:bg-emerald-400 text-background transition-all duration-300 hover:scale-105">
+                        <Button asChild className="bg-emerald-500 hover:bg-emerald-400 text-background transition-all duration-300 hover:scale-105">
+                          <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
                             <Github className="w-4 h-4 mr-2" />
                             View Source
-                          </Button>
-                        </a>
+                          </a>
+                        </Button>
                       )}
                       {selectedProject.liveUrl !== '#' && (
-                        <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer">
-                          <Button variant="outline" className="glass border-foreground/[0.1] text-foreground/90 hover:text-emerald-400 hover:border-emerald-500/40">
+                        <Button asChild variant="outline" className="glass border-foreground/[0.1] text-foreground/90 hover:text-emerald-400 hover:border-emerald-500/40">
+                          <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="w-4 h-4 mr-2" />
                             {selectedProject.liveUrl.includes('linkedin.com') ? 'View on LinkedIn' : 'Live Link'}
-                          </Button>
-                        </a>
+                          </a>
+                        </Button>
                       )}
                     </div>
                   </div>

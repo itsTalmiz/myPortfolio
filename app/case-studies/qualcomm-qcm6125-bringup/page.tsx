@@ -38,12 +38,12 @@ export default function CaseStudyQcm6125Page() {
       {/* Header */}
       <header className="glass border-b border-foreground/[0.08] relative z-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
-          <Link href="/">
-            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+          <Button asChild variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+            <Link href="/">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
-            </Button>
-          </Link>
+            </Link>
+          </Button>
           <span className="font-mono-tech text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
             Engineering Case Study
           </span>
@@ -211,17 +211,17 @@ export default function CaseStudyQcm6125Page() {
               The software stack seamlessly supports incremental OTA upgrades to keep devices updated in the field.
             </p>
             <div className="pt-4 flex flex-wrap gap-4">
-              <Link href="https://www.linkedin.com/in/itstalmiz/" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-emerald-500 hover:bg-emerald-400 text-background font-semibold">
+              <Button asChild className="bg-emerald-500 hover:bg-emerald-400 text-background font-semibold">
+                <a href="https://www.linkedin.com/in/itstalmiz/" target="_blank" rel="noopener noreferrer">
                   Hire Me for Your Hardware Project
                   <ArrowUpRight className="w-4 h-4 ml-1.5" />
-                </Button>
-              </Link>
-              <Link href="/services/embedded-firmware-bsp">
-                <Button variant="outline" className="glass border-foreground/10 hover:border-emerald-500/40">
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="glass border-foreground/10 hover:border-emerald-500/40">
+                <Link href="/services/embedded-firmware-bsp">
                   Explore Firmware Services
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </section>
         </div>

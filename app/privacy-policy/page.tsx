@@ -12,12 +12,12 @@ export default function PrivacyPolicy() {
       <header className="glass border-b border-foreground/[0.06]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center space-x-4">
-            <Link href="/">
-              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+            <Button asChild variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+              <Link href="/">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Portfolio
-              </Button>
-            </Link>
+              </Link>
+            </Button>
             <div className="flex items-center space-x-3">
               <Shield className="w-8 h-8 text-emerald-400" />
               <h1 className="text-2xl font-bold">Privacy Policy</h1>
@@ -209,11 +209,11 @@ export default function PrivacyPolicy() {
 
         {/* Back to Top */}
         <div className="text-center mt-12">
-          <Link href="/">
-            <Button className="bg-emerald-500 hover:bg-emerald-400 text-background px-8 py-3 transition-all duration-300 hover:scale-105">
+          <Button asChild className="bg-emerald-500 hover:bg-emerald-400 text-background px-8 py-3 transition-all duration-300 hover:scale-105">
+            <Link href="/">
               Return to Portfolio
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </main>
     </div>

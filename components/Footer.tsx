@@ -36,46 +36,49 @@ export function Footer() {
           </div>
 
           <div className="flex justify-center space-x-4">
-            <a
-              href="https://github.com/itstalmiz"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Profile"
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
+              className="text-muted-foreground hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 hover:scale-110"
             >
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-muted-foreground hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 hover:scale-110"
+              <a
+                href="https://github.com/itstalmiz"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
               >
                 <Github className="w-5 h-5" />
-              </Button>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/itstalmiz/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn Profile"
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
+              className="text-muted-foreground hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 hover:scale-110"
             >
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-muted-foreground hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 hover:scale-110"
+              <a
+                href="https://www.linkedin.com/in/itstalmiz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-5 h-5" />
-              </Button>
-            </a>
-            <a
-              href="mailto:contact@itstalmiz.com"
-              aria-label="Send Email"
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
+              className="text-muted-foreground hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 hover:scale-110"
             >
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-muted-foreground hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 hover:scale-110"
+              <a
+                href="mailto:contact@itstalmiz.com"
+                aria-label="Send Email"
               >
                 <Mail className="w-5 h-5" />
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
 
           <div className="text-center md:text-right">

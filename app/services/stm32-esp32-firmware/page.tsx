@@ -128,17 +128,17 @@ export default function MicrocontrollerFirmwarePage() {
             Production-grade embedded firmware engineering for mission-critical hardware. From bare-metal C register configuration and FreeRTOS multitasking on 32-bit ARM Cortex-M and Xtensa architectures to low-power battery optimization and industrial fieldbus protocols.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link href="/#contact">
-              <Button className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold font-mono-tech gap-2">
+            <Button asChild className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold font-mono-tech gap-2">
+              <Link href="/#contact">
                 Discuss Your MCU Project
                 <ArrowUpRight className="w-4 h-4" />
-              </Button>
-            </Link>
-            <Link href="/services/embedded-firmware-bsp">
-              <Button variant="outline" className="border-foreground/20 hover:border-emerald-500/50 font-mono-tech">
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="border-foreground/20 hover:border-emerald-500/50 font-mono-tech">
+              <Link href="/services/embedded-firmware-bsp">
                 View Qualcomm &amp; Linux BSP Services
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </header>
 
@@ -242,16 +242,16 @@ export default function MicrocontrollerFirmwarePage() {
             Available for STM32 and ESP32 firmware architecture, hardware driver bring-up, FreeRTOS optimization, and production troubleshooting from Islamabad, Pakistan.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/#contact">
-              <Button className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold font-mono-tech">
+            <Button asChild className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold font-mono-tech">
+              <Link href="/#contact">
                 Get In Touch
-              </Button>
-            </Link>
-            <Link href="/services/hardware-pcb-design">
-              <Button variant="outline" className="border-foreground/20 hover:border-emerald-500/50 font-mono-tech">
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="border-foreground/20 hover:border-emerald-500/50 font-mono-tech">
+              <Link href="/services/hardware-pcb-design">
                 View PCB Layout Services
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </section>
       </main>

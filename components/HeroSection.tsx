@@ -162,22 +162,22 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
-              <Link
-                href="https://www.linkedin.com/in/itstalmiz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                passHref
+              <Button
+                asChild
+                size="lg"
+                className="bg-emerald-500 hover:bg-emerald-400 text-background px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] hover:shadow-glow btn-animate relative overflow-hidden group w-full sm:w-auto"
               >
-                <Button
-                  size="lg"
-                  className="bg-emerald-500 hover:bg-emerald-400 text-background px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] hover:shadow-glow btn-animate relative overflow-hidden group w-full sm:w-auto"
+                <a
+                  href="https://www.linkedin.com/in/itstalmiz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     Got a project?
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
-                </Button>
-              </Link>
+                </a>
+              </Button>
 
               <Button
                 variant="outline"
@@ -389,25 +389,25 @@ export function HeroSection() {
               </DialogDescription>
             </div>
             <div className="flex items-center gap-2 shrink-0">
-              <a
-                href="/Resume_MTalmizUrRehman__General.pdf"
-                download="Resume_MTalmizUrRehman.pdf"
-              >
-                <Button size="sm" className="bg-emerald-500 hover:bg-emerald-400 text-background text-xs font-semibold shadow-md transition-all">
+              <Button asChild size="sm" className="bg-emerald-500 hover:bg-emerald-400 text-background text-xs font-semibold shadow-md transition-all">
+                <a
+                  href="/Resume_MTalmizUrRehman__General.pdf"
+                  download="Resume_MTalmizUrRehman.pdf"
+                >
                   <Download className="w-3.5 h-3.5 mr-1.5" />
                   Download PDF
-                </Button>
-              </a>
-              <a
-                href="/Resume_MTalmizUrRehman__General.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outline" size="sm" className="glass text-xs border-foreground/10 hover:border-emerald-500/40">
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="sm" className="glass text-xs border-foreground/10 hover:border-emerald-500/40">
+                <a
+                  href="/Resume_MTalmizUrRehman__General.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
                   Open in New Tab
-                </Button>
-              </a>
+                </a>
+              </Button>
             </div>
           </DialogHeader>
 

@@ -86,12 +86,12 @@ export default function HardwarePcbDesignPage() {
       {/* Header */}
       <header className="glass border-b border-foreground/[0.08] relative z-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
-          <Link href="/">
-            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+          <Button asChild variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+            <Link href="/">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
-            </Button>
-          </Link>
+            </Link>
+          </Button>
           <div className="flex items-center gap-2">
             <span className="font-mono-tech text-xs text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-full">
               Hardware &amp; PCB Services
@@ -119,17 +119,17 @@ export default function HardwarePcbDesignPage() {
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link href="https://www.linkedin.com/in/itstalmiz/" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-emerald-500 hover:bg-emerald-400 text-background font-semibold">
+            <Button asChild className="bg-emerald-500 hover:bg-emerald-400 text-background font-semibold">
+              <a href="https://www.linkedin.com/in/itstalmiz/" target="_blank" rel="noopener noreferrer">
                 Start a PCB Project
                 <ArrowUpRight className="w-4 h-4 ml-1.5" />
-              </Button>
-            </Link>
-            <Link href="/case-studies/qualcomm-qcm6125-bringup">
-              <Button variant="outline" className="glass border-foreground/10 hover:border-sky-500/40">
+              </a>
+            </Button>
+            <Button asChild variant="outline" className="glass border-foreground/10 hover:border-sky-500/40">
+              <Link href="/case-studies/qualcomm-qcm6125-bringup">
                 View Multilayer PCB Case Study
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
 
@@ -197,12 +197,12 @@ export default function HardwarePcbDesignPage() {
               and fast/reverse wireless charging were routed in a compact handheld form-factor.
             </p>
           </div>
-          <Link href="/case-studies/qualcomm-qcm6125-bringup" className="shrink-0">
-            <Button className="bg-sky-500 hover:bg-sky-400 text-background font-semibold">
+          <Button asChild className="bg-sky-500 hover:bg-sky-400 text-background font-semibold shrink-0">
+            <Link href="/case-studies/qualcomm-qcm6125-bringup">
               Read PCB Case Study
               <ArrowUpRight className="w-4 h-4 ml-1.5" />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </main>
     </div>
