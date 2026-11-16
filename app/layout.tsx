@@ -238,6 +238,25 @@ const structuredData = {
         'Embedded Android Hardware',
       ],
     },
+    {
+      '@type': 'TechArticle',
+      '@id': `${siteUrl}/case-studies/shenzhen-hardware-npi/#article`,
+      headline: 'Shenzhen Hardware NPI & Mass Production Case Study',
+      description: 'Engineering lead for 4 on-site hardware NPI missions to Shenzhen, China. SMT line bring-up, BGA X-ray inspection, automated EDL flashing, and mass production.',
+      author: {
+        '@id': `${siteUrl}/#person`,
+      },
+      publisher: {
+        '@id': `${siteUrl}/#person`,
+      },
+      url: `${siteUrl}/case-studies/shenzhen-hardware-npi`,
+      about: [
+        'Shenzhen Hardware NPI',
+        'SMT Pick and Place Line Bring-Up',
+        'BGA Dye and Pry Failure Analysis',
+        'Mass Production Automated Flashing',
+      ],
+    },
   ],
 };
 

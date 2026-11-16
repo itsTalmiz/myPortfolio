@@ -117,6 +117,10 @@ M. Talmiz Ur Rehman is a Senior Hardware Design Engineer (Firmware) based in Isl
 - **URL**: https://itstalmiz.com/case-studies/google-gms-certification
 - **Scope**: Engineering lead for achieving official Google Mobile Services (GMS) certification for custom enterprise Android hardware (Retail Branding: AIOAPPInc, Marketing Name: TSAI, Model: T7). Covers passing Android Compatibility Test Suite (CTS), Vendor Test Suite (VTS), and GTS with zero unapproved failures; SELinux MAC policy hardening and zero-neverallow enforcement; TrustZone attestation key injection on automated Shenzhen SMT factory lines; and official registration on the Google Play Supported Devices public database. Awarded Star Performer Q2 2026.
 
+### Featured Case Study 3: Shenzhen Hardware NPI & Mass Production Engineering (4 Deployments)
+- **URL**: https://itstalmiz.com/case-studies/shenzhen-hardware-npi
+- **Scope**: Engineering leadership across 4 physical on-site deployments in Shenzhen and Guangdong, China covering EVT, DVT, PVT, and volume mass production. Features a 30-photograph verified gallery spanning high-speed Fuji NXT SMT pick-and-place lines, BGA dye-and-pry failure analysis, 3D RF anechoic antenna chambers, automated 10-device parallel EDL flashing fixtures, thermal hotspot imaging with FLIR, Huaqiangbei supply chain agility, and export-ready palletization.
+
 ---
 
 ## 7. How to Connect

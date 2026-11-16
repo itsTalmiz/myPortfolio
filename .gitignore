@@ -40,3 +40,6 @@ next-env.d.ts
 
 # brag
 /brag-output
+
+# raw staging
+/album/

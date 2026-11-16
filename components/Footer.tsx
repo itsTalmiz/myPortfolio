@@ -36,6 +36,10 @@ export function Footer() {
               <Link href="/case-studies/google-gms-certification" className="hover:text-emerald-400 transition-colors">
                 Google GMS Certified
               </Link>
+              <span>/</span>
+              <Link href="/case-studies/shenzhen-hardware-npi" className="hover:text-emerald-400 transition-colors">
+                Shenzhen NPI
+              </Link>
             </div>
           </div>
 

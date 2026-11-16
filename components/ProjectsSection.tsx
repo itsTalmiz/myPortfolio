@@ -20,6 +20,7 @@ import {
   Dices,
   Receipt,
   FileText,
+  Factory,
 } from 'lucide-react';
 import {
   FpgaConvolutionArt,
@@ -54,6 +55,30 @@ const projects = [
     githubUrl: "#",
     liveUrl: "https://storage.googleapis.com/play_public/supported_devices.html",
     caseStudyUrl: "/case-studies/google-gms-certification",
+  },
+  {
+    id: 99,
+    title: "Shenzhen Hardware NPI & Mass Production (4 Missions)",
+    description:
+      "Led 4 on-site engineering deployments to Shenzhen, China: SMT lines, BGA dye-and-pry failure analysis, and automated test rigs",
+    longDescription:
+      "Spearheaded on-site manufacturing and engineering validation across Shenzhen and Guangdong, China. Oversaw Fuji NXT SMT pick-and-place setup, 8-zone reflow oven thermal profiling, destructive BGA dye-and-pry reliability analysis, RF anechoic chamber antenna tuning, and custom 10-device automated EDL flashing rigs for volume production ramp.",
+    image:
+      "/china-album/1744049214511.jpg",
+    icon: Factory,
+    technologies: [
+      "Shenzhen SMT Floor",
+      "Fuji NXT Pick & Place",
+      "BGA Dye & Pry Analysis",
+      "Automated EDL Jigs",
+      "RF Anechoic Chamber",
+    ],
+    category: "Embedded Systems",
+    duration: "2024 – 2025 (4 Trips)",
+    status: "Completed",
+    githubUrl: "#",
+    liveUrl: "https://www.linkedin.com/in/itstalmiz/",
+    caseStudyUrl: "/case-studies/shenzhen-hardware-npi",
   },
   {
     id: 1,
