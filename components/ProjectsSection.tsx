@@ -40,8 +40,6 @@ const projects = [
       "Led engineering compliance to achieve official Google GMS Certification for custom Qualcomm Android hardware (TSAI / T7)",
     longDescription:
       "Spearheaded technical compliance, CTS/VTS/GTS automated testing, SELinux policy hardening, and cryptographic factory key provisioning to achieve official Google Mobile Services (GMS) approval for custom enterprise Android hardware (Retail Branding: AIOAPPInc, Model: T7). Verified and listed in Google Play Supported Devices official directory.",
-    image:
-      "/project/gms_google_partner_listing.jpg",
     icon: Shield,
     technologies: [
       "Official Google GMS Approved",

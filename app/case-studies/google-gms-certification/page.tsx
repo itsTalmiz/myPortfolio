@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowLeft, CheckCircle2, ArrowUpRight, Award, ShieldCheck, Terminal, Cpu, ExternalLink, Sparkles, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 
 export const metadata: Metadata = {
   title: 'Google GMS Device Certification | Talmiz Ur Rehman',
@@ -108,8 +107,8 @@ export default function GoogleGmsCaseStudyPage() {
           ))}
         </div>
 
-        {/* Evidence & Verification Images Section */}
-        <section className="mb-14 space-y-8">
+        {/* Official Verification & Executive Endorsement */}
+        <section className="mb-14 space-y-6">
           <div className="flex items-center gap-2 mb-4">
             <Award className="w-6 h-6 text-emerald-400" />
             <h2 className="text-2xl font-bold font-mono-tech text-foreground">
@@ -118,64 +117,92 @@ export default function GoogleGmsCaseStudyPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Image 1: Google Supported Devices Proof */}
-            <Card className="glass border-foreground/[0.08] overflow-hidden group">
-              <div className="relative h-64 sm:h-72 w-full bg-black/40">
-                <Image
-                  src="/project/gms_google_partner_listing.jpg"
-                  alt="Official Google Play Supported Devices listing showing AIOAPPInc TSAI T7"
-                  fill
-                  className="object-contain p-2 transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-              </div>
-              <CardContent className="p-5 space-y-2 border-t border-foreground/[0.06]">
+            {/* Card 1: Google Supported Devices Proof */}
+            <Card className="glass border-foreground/[0.08] p-6 space-y-5 flex flex-col justify-between">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono-tech text-emerald-400 font-semibold">
+                  <span className="text-xs font-mono-tech text-emerald-400 font-semibold px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20">
                     GOOGLE PARTNERS DIRECTORY
                   </span>
                   <a
                     href="https://storage.googleapis.com/play_public/supported_devices.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-muted-foreground hover:text-emerald-400 flex items-center gap-1"
+                    className="text-xs text-muted-foreground hover:text-emerald-400 flex items-center gap-1 font-mono-tech"
                   >
                     <span>Inspect live</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
-                <h3 className="text-base font-bold text-foreground">
+                <h3 className="text-lg font-bold text-foreground">
                   Official Google Certified Device Record
                 </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Verified entry in Google&#39;s public hardware database under Retail Branding <strong>AIOAPPInc</strong>, Marketing Name <strong>TSAI</strong>, and Model <strong>T7</strong>.
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Publicly cataloged entry in Google&apos;s global supported devices hardware database under retail branding <strong>AIOAPPInc</strong>, marketing name <strong>TSAI</strong>, and model <strong>T7</strong>.
                 </p>
-              </CardContent>
+                <div className="p-3.5 rounded-xl bg-foreground/[0.02] border border-foreground/[0.06] font-mono-tech text-xs space-y-2">
+                  <div className="text-muted-foreground flex justify-between">
+                    <span>Retail Brand:</span>
+                    <span className="text-emerald-400 font-semibold">AIOAPPInc</span>
+                  </div>
+                  <div className="text-muted-foreground flex justify-between">
+                    <span>Marketing Name:</span>
+                    <span className="text-emerald-400 font-semibold">TSAI (Tableside AI)</span>
+                  </div>
+                  <div className="text-muted-foreground flex justify-between">
+                    <span>Device &amp; Model:</span>
+                    <span className="text-emerald-400 font-semibold">T7 / T7</span>
+                  </div>
+                  <div className="text-muted-foreground flex justify-between">
+                    <span>Verification:</span>
+                    <span className="text-sky-400 font-semibold">Google Play Supported</span>
+                  </div>
+                </div>
+              </div>
+              <Button asChild variant="outline" size="sm" className="w-full glass border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 font-mono-tech text-xs">
+                <a
+                  href="https://storage.googleapis.com/play_public/supported_devices.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Verify Device in Google Database
+                  <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
+                </a>
+              </Button>
             </Card>
 
-            {/* Image 2: Star Performer Trophy & CEO Praise */}
-            <Card className="glass border-foreground/[0.08] overflow-hidden group">
-              <div className="relative h-64 sm:h-72 w-full bg-black/40">
-                <Image
-                  src="/project/aio_star_performer_award.jpg"
-                  alt="Star Performer Award Q2 2026 for GMS Certification and praise from CEO Alex Hult"
-                  fill
-                  className="object-contain p-2 transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-              </div>
-              <CardContent className="p-5 space-y-2 border-t border-foreground/[0.06]">
+            {/* Card 2: Executive Recognition & Award */}
+            <Card className="glass border-foreground/[0.08] p-6 space-y-5 flex flex-col justify-between">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono-tech text-sky-400 font-semibold">
+                  <span className="text-xs font-mono-tech text-sky-400 font-semibold px-2.5 py-1 rounded-md bg-sky-500/10 border border-sky-500/20">
                     EXECUTIVE RECOGNITION
                   </span>
-                  <span className="text-xs text-muted-foreground">Q2 2026 Award</span>
+                  <span className="text-xs text-muted-foreground font-mono-tech">Star Performer Q2 2026</span>
                 </div>
-                <h3 className="text-base font-bold text-foreground">
+                <h3 className="text-lg font-bold text-foreground">
                   Star Performer Award &amp; Leadership Endorsement
                 </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Awarded Star Performer at AIO for spearheading the 3-year journey from hardware concept to certified shipment, publicly endorsed by CEO Alex Hult.
+                <blockquote className="border-l-2 border-emerald-400 pl-3.5 py-1 text-sm text-foreground/90 italic">
+                  &ldquo;Congrats man. You guys are working so hard and this is a big win&rdquo;
+                  <span className="block not-italic text-xs text-muted-foreground font-mono-tech mt-2 font-normal">
+                    — Alex Hult, CEO @ AIO (AI for restaurants)
+                  </span>
+                </blockquote>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Honored with the Star Performer Award at AIO for engineering leadership closing a 3-year loop across hardware design, kernel compliance, and high-volume Shenzhen mass production.
                 </p>
-              </CardContent>
+              </div>
+              <Button asChild variant="outline" size="sm" className="w-full glass border-sky-500/30 text-sky-400 hover:bg-sky-500/10 font-mono-tech text-xs">
+                <a
+                  href="https://www.linkedin.com/feed/update/urn:li:activity:7519334307757494272/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Announcement on LinkedIn
+                  <ArrowUpRight className="w-3.5 h-3.5 ml-1.5" />
+                </a>
+              </Button>
             </Card>
           </div>
         </section>
